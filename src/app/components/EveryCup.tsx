@@ -32,7 +32,7 @@ const EveryCup = () => {
             </div>
 
             <div className="bg-[#f1f2f2] px-4 sm:px-8 md:px-16 lg:px-24 py-10 mt-8 md:mt-4 flex flex-col md:flex-row items-center relative">
-                <div className="absolute top-[-5.4%] right-[20%] lg:top-[-6%] xl:top-[-9%] lg:right-[10%] ">
+                <div className="absolute top-[-6%] right-[20%] lg:top-[-6%] xl:top-[-9%] lg:right-[10%] ">
                     <Image
                         width={1920}
                         height={1080}
