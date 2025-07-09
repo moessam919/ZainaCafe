@@ -17,7 +17,7 @@ const EveryCup = () => {
                 <Image
                     width={1920}
                     height={1080}
-                    src="/Coffe.png"
+                    src="/coffe.png"
                     alt="Our Story"
                     className="w-[30px] xl:w-[50px]"
                 />

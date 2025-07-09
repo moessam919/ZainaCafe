@@ -16,7 +16,7 @@ const OurStory = () => {
                 <Image
                     width={1920}
                     height={1080}
-                    src="/Coffe.png"
+                    src="/coffe.png"
                     alt="Our Story"
                     className="w-[60px] xl:w-[80px]"
                 />
@@ -25,7 +25,7 @@ const OurStory = () => {
                 <Image
                     width={1920}
                     height={1080}
-                    src="/Coffe.png"
+                    src="/coffe.png"
                     alt="Our Story"
                     className="w-[80px] xl:w-[100px]"
                 />
