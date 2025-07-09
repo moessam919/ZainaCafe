@@ -33,8 +33,8 @@ const Page = () => {
                 </div>
 
                 {/* Category Navigation */}
-                <div className="bg-white border-b sticky top-[108px] z-10 flex flex-col lg:flex-row justify-between items-center px-4 sm:px-8 md:px-16 lg:px-24">
-                    <div className="container mx-auto px-4 overflow-x-auto ">
+                <div className="bg-white border-b sticky top-[108px] z-10 flex flex-col lg:flex-row items-center ">
+                    <div className="container mx-auto px-4 overflow-x-auto sm:px-8 md:px-16 lg:px-24 2xl:px-28">
                         <div className="flex space-x-4 py-4">
                             {menuData.map((category) => (
                                 <button
@@ -80,7 +80,7 @@ const Page = () => {
                                 {category.items.map((item) => (
                                     <div
                                         key={item.id}
-                                        className=" rounded-lg  overflow-hidden hover:shadow-md transition-shadow duration-300"
+                                        className=" rounded-lg  overflow-hidden"
                                     >
                                         {/* Product Image */}
                                         <div className="h-48 bg-gray-100 flex items-center justify-center">

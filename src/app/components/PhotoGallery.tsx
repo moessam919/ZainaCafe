@@ -15,7 +15,7 @@ const PhotoGallery = () => {
                                 height={1080}
                                 src="/sign.png"
                                 alt="sign"
-                                className="w-full"
+                                className="w-full 2xl:w-[450px]"
                             />
                             <p className="text-text-color text-sm leading-relaxed">
                                 Lorem ipsum dolor sit amet, consectetur
@@ -133,7 +133,7 @@ const PhotoGallery = () => {
                                 height={1080}
                                 src="/sign.png"
                                 alt="sign"
-                                className="w-full"
+                                className="w-full 2xl:w-[450px]"
                             />
                             <p className="text-text-color text-sm leading-relaxed">
                                 Lorem ipsum dolor sit amet, consectetur

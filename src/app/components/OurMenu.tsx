@@ -79,10 +79,12 @@ const OurMenu = () => {
                 </div>
             </div>
             <div className="flex flex-col justify-center items-center mt-8">
-                <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-3xl md:text-5xl font-medium transition-colors duration-200 flex gap-2">
-                    Full Menu
-                    <ChevronRight className="size-10 md:size-14" />
-                </button>
+                <a href="/menu.pdf" target="_blank" rel="noopener noreferrer">
+                    <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-3xl md:text-5xl font-medium transition-colors duration-200 flex gap-2 cursor-pointer">
+                        Full Menu
+                        <ChevronRight className="size-10 md:size-14" />
+                    </button>
+                </a>
             </div>
         </div>
     );
