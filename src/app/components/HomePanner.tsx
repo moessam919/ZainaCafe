@@ -3,7 +3,7 @@ import Image from "next/image";
 const HomePanner = () => {
     return (
         <div className="relative">
-            <div className="absolute top-[-2.4%] right-[20%] lg:top-[-4%] lg:right-[10%]">
+            <div className="absolute top-[-2.4%] right-[20%] lg:top-[-5%] lg:right-[10%]">
                 <Image
                     width={1920}
                     height={1080}
@@ -12,7 +12,7 @@ const HomePanner = () => {
                     className="w-[260px] md:w-[360px] lg:w-[500px]"
                 />
             </div>
-            <div className="absolute bottom-[-3%] right-[20%] lg:bottom-[-5%] lg:right-[10%]">
+            <div className="absolute bottom-[-3%] right-[20%] lg:bottom-[-6%] lg:right-[10%]">
                 <Image
                     width={1920}
                     height={1080}
@@ -40,7 +40,7 @@ const HomePanner = () => {
                                     height={1080}
                                     src="/avatar.png"
                                     alt="avatar for Zaina Cafr"
-                                    className="w-[300px] md:w-[300px] lg:w-[480px] xl:w-[460px] 2xl:w-[600px] "
+                                    className="w-[300px] md:w-[300px] lg:w-[480px] xl:w-[460px] 3xl:w-[600px] "
                                 />
                             </div>
                         </div>
