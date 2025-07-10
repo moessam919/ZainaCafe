@@ -59,9 +59,15 @@ const page = () => {
                     </div>
 
                     {/* Button at the bottom */}
-                    <button className="bg-orange-color cursor-pointer text-white px-6 py-4 text-2xl rounded-md mt-6 font-medium w-full">
-                        Explore Our Menu
-                    </button>
+                    <a
+                        href="/menu.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <button className="bg-orange-color cursor-pointer text-white px-6 py-4 text-2xl rounded-md mt-6 font-medium w-full">
+                            Explore Our Menu
+                        </button>
+                    </a>
                 </div>
             </div>
 

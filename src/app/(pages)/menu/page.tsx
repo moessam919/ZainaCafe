@@ -33,8 +33,8 @@ const Page = () => {
                 </div>
 
                 {/* Category Navigation */}
-                <div className="bg-white border-b sticky top-[120px] z-10 flex flex-col lg:flex-row items-center ">
-                    <div className="container mx-auto px-4 overflow-x-auto sm:px-8 md:px-16 lg:px-24 2xl:px-28">
+                <div className="bg-white border-b sticky container mx-auto top-[120px] z-10 flex flex-col lg:flex-row justify-between items-center ">
+                    <div className=" overflow-x-auto">
                         <div className="flex space-x-4 py-4">
                             {menuData.map((category) => (
                                 <button
