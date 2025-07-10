@@ -33,9 +33,9 @@ const Page = () => {
                 </div>
 
                 {/* Category Navigation */}
-                <div className="bg-white border-b sticky container mx-auto top-[120px] z-10 flex flex-col lg:flex-row justify-between items-center ">
-                    <div className=" overflow-x-auto">
-                        <div className="flex space-x-4 py-4">
+                <div className="overflow-x-auto bg-white border-b sticky container mx-auto top-[120px] z-10 ">
+                    <div className="overflow-x-auto flex flex-col lg:flex-row justify-between items-center ">
+                        <div className="flex space-x-4 py-4 overflow-x-auto">
                             {menuData.map((category) => (
                                 <button
                                     key={category.id}
@@ -50,8 +50,19 @@ const Page = () => {
                                 </button>
                             ))}
                         </div>
+                        <div className="hidden lg:flex">
+                            <a
+                                href="/menu.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <button className="px-6 py-3 rounded-md font-medium whitespace-nowrap transition-all duration-200 bg-orange-500 text-white shadow-lg cursor-pointer my-4 lg:my-0">
+                                    Menu with Pricing Details
+                                </button>
+                            </a>
+                        </div>
                     </div>
-                    <div>
+                    <div className="lg:hidden text-center">
                         <a
                             href="/menu.pdf"
                             target="_blank"

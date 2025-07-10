@@ -29,7 +29,7 @@ const Header = () => {
     ];
 
     return (
-        <header className="bg-white py-2 md:pb-10 md:py-8">
+        <header className="bg-white py-4 md:pb-10 md:py-8">
             <div className="container mx-auto px-4">
                 <div className="flex items-center justify-between h-20">
                     {/* Logo */}
@@ -39,7 +39,7 @@ const Header = () => {
                             alt="Zaina Cafe - Your Daily Retreat"
                             width={150}
                             height={50}
-                            className="w-[100px] h-auto sm:w-[120px] md:w-[140px] lg:w-[150px]"
+                            className="w-[80px] h-auto sm:w-[120px] md:w-[120px] lg:w-[120px]"
                             priority
                         />
                     </div>

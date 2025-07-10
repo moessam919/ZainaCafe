@@ -10,13 +10,14 @@ const PhotoGallery = () => {
                     <div className="space-y-6">
                         {/* Top text section */}
                         <div className=" p-6 ">
-                            <Image
-                                width={1920}
-                                height={1080}
-                                src="/sign.png"
-                                alt="sign"
-                                className="w-full 2xl:w-[450px]"
-                            />
+                            <h1
+                                className="text-3xl lg:text-5xl  text-orange-color mb-5"
+                                style={{
+                                    fontFamily: "Bebas Neue, sans-serif",
+                                }}
+                            >
+                                Consectetur Adipiscing
+                            </h1>
                             <p className="text-text-color text-sm leading-relaxed">
                                 Lorem ipsum dolor sit amet, consectetur
                                 adipiscing elit, sed do eiusmod tempor
@@ -128,13 +129,14 @@ const PhotoGallery = () => {
 
                         {/* Bottom text section */}
                         <div className="p-6 ">
-                            <Image
-                                width={1920}
-                                height={1080}
-                                src="/sign.png"
-                                alt="sign"
-                                className="w-full 2xl:w-[450px]"
-                            />
+                            <h1
+                                className="text-3xl lg:text-5xl  text-orange-color mb-5"
+                                style={{
+                                    fontFamily: "Bebas Neue, sans-serif",
+                                }}
+                            >
+                                Consectetur Adipiscing
+                            </h1>
                             <p className="text-text-color text-sm leading-relaxed">
                                 Lorem ipsum dolor sit amet, consectetur
                                 adipiscing elit, sed do eiusmod tempor

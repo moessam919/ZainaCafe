@@ -47,24 +47,24 @@ const HomePanner = () => {
                         <div className="flex justify-center items-center mt-20 lg:mt-40 ">
                             <div className="text-center relative">
                                 <div className="relative">
-                                    <div className="absolute top-[-45px] left-[20px] md:top-[-45px] md:left-[50px] lg:top-[-45px] lg:left-[30px] xl:top-[-70px] xl:left-[75px]">
-                                        <Image
-                                            width={1920}
-                                            height={1080}
-                                            src="/welcometext.png"
-                                            alt="welcometext"
-                                            className="w-[260px] md:w-[360px] lg:w-[290px] xl:w-[500px]"
-                                        />
-                                    </div>
-                                    <h1 className="text-header-color text-[60px] md:text-[110px] lg:text-[65px] xl:text-[140px] font-bold">
+                                    <h1
+                                        className="text-5xl md:text-7xl lg:text-5xl xl:text-8xl text-orange-color absolute top-[-20%] left-[20px] md:top-[-15%] md:left-[50px] lg:top-[-20%] lg:left-[30px] xl:top-[-20%] xl:left-[75px]"
+                                        style={{
+                                            fontFamily:
+                                                "Bebas Neue, sans-serif",
+                                        }}
+                                    >
+                                        Welcome to
+                                    </h1>
+                                    <h1 className="text-header-color text-[60px] md:text-[110px] lg:text-[65px] xl:text-[130px] font-bold">
                                         ZAINA CAFE.
                                     </h1>
                                 </div>
                                 <div className="relative">
-                                    <h3 className="text-text-color text-[43px] md:text-[80px] lg:text-[50px] xl:text-[100px] font-semibold mt-[-30px] md:mt-[-50px] lg:mt-[-40px] xl:mt-[-80px]">
+                                    <h3 className="text-text-color text-[43px] md:text-[80px] lg:text-[46px] xl:text-[93px] font-semibold mt-[-30px] md:mt-[-50px] lg:mt-[-40px] xl:mt-[-80px]">
                                         Your Daily Retreat!
                                     </h3>
-                                    <div className="absolute bottom-[-10px] right-[15px] md:bottom-[-10px] md:right-[15px] lg:bottom-[-20px] lg:right-[15px] xl:bottom-[-20px] xl:right-[50px]">
+                                    <div className="absolute bottom-[-10px] right-[1px] md:bottom-[-10px] md:right-[1px] lg:bottom-[-20px] lg:right-[1px] xl:bottom-[-20px] xl:right-[10px]">
                                         <Image
                                             width={1920}
                                             height={1080}
@@ -84,7 +84,7 @@ const HomePanner = () => {
                                     />
                                 </div>
 
-                                <div className="mt-8 hidden justify-end px-2 lg:flex">
+                                <div className="mt-10 hidden justify-end px-2 lg:flex">
                                     <a
                                         href="/contact"
                                         className="inline-block bg-orange-color  text-white lg:text-3xl xl:text-6xl font-semibold px-16 py-5 rounded-md hover:bg-opacity-90 transition-all"
