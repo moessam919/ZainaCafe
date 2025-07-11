@@ -64,7 +64,7 @@ const HomePanner = () => {
                                     <h3 className="text-text-color text-[43px] md:text-[80px] lg:text-[46px] xl:text-[93px] font-semibold mt-[-30px] md:mt-[-50px] lg:mt-[-40px] xl:mt-[-80px]">
                                         Your Daily Retreat!
                                     </h3>
-                                    <div className="absolute bottom-[-10px] right-[1px] md:bottom-[-10px] md:right-[1px] lg:bottom-[-20px] lg:right-[1px] xl:bottom-[-20px] xl:right-[10px]">
+                                    {/* <div className="absolute bottom-[-10px] right-[1px] md:bottom-[-10px] md:right-[1px] lg:bottom-[-20px] lg:right-[1px] xl:bottom-[-20px] xl:right-[10px]">
                                         <Image
                                             width={1920}
                                             height={1080}
@@ -72,7 +72,7 @@ const HomePanner = () => {
                                             alt="text shape"
                                             className="w-[150px] md:w-[190px] lg:w-[170px] xl:w-[310px]"
                                         />
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <div className="absolute right-[80%]">
                                     <Image
