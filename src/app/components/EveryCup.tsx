@@ -32,12 +32,12 @@ const EveryCup = () => {
             </div>
 
             <div className="bg-[#f1f2f2] px-4 sm:px-8 md:px-16 lg:px-24 py-10 mt-8 md:mt-4 flex flex-col md:flex-row items-center relative">
-                <div className="absolute top-[-6%] sm:-top-5 right-[20%] lg:top-[-6%] xl:-top-7 lg:right-[10%] 2xl:-top-9">
+                <div className="absolute top-[-7%] sm:-top-5 right-[20%] lg:top-[-6%] xl:-top-7 lg:right-[10%] 2xl:-top-9">
                     <Image
                         width={1920}
                         height={1080}
                         src="/HomeCorner.png"
-                        alt="welcometext"
+                        alt="HomeCorner"
                         className="w-[260px] md:w-[260px] lg:w-[400px] xl:w-90 2xl:w-[30rem]"
                     />
                 </div>
@@ -46,7 +46,7 @@ const EveryCup = () => {
                         width={1920}
                         height={1080}
                         src="/HomeCornerBottom.png"
-                        alt="welcometext"
+                        alt="HomeCornerBottom"
                         className="w-[260px] md:w-[260px] lg:w-[400px] xl:w-90 2xl:w-[30rem]"
                     />
                 </div>
