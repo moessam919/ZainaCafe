@@ -11,7 +11,7 @@ const PhotoGallery = () => {
                         {/* Top text section */}
                         <div className=" p-6 ">
                             <h1
-                                className="text-3xl lg:text-5xl  text-orange-color mb-5"
+                                className="text-2xl sm:text-3xl md:text-2xl lg:text-xl xl:text-2xl 2xl:text-4xl text-orange-color mb-5"
                                 style={{
                                     fontFamily: "Bebas Neue, sans-serif",
                                 }}
@@ -130,7 +130,7 @@ const PhotoGallery = () => {
                         {/* Bottom text section */}
                         <div className="p-6 ">
                             <h1
-                                className="text-3xl lg:text-5xl  text-orange-color mb-5"
+                                className="text-2xl sm:text-3xl md:text-2xl lg:text-xl xl:text-2xl 2xl:text-4xl  text-orange-color mb-5"
                                 style={{
                                     fontFamily: "Bebas Neue, sans-serif",
                                 }}

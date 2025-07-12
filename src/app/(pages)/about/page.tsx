@@ -27,7 +27,7 @@ const page = () => {
     return (
         <div className="px-4 sm:px-8 md:px-16 lg:px-24 container mx-auto">
             {/* Our Story Section */}
-            <div className="flex flex-col xl:flex-row gap-4 mt-10">
+            <div className="flex flex-col xl:flex-row gap-4 xl:gap-10 mt-10">
                 {/* Image */}
                 <div className="w-full order-1 xl:order-0">
                     <Image
@@ -35,16 +35,16 @@ const page = () => {
                         alt="Zaina Cafe Interior"
                         width={1920}
                         height={1080}
-                        className="rounded-xl object-cover w-[600px]"
+                        className="rounded-xl object-cover w-full xl:w-[600px]"
                     />
                 </div>
 
                 <div className="w-full flex flex-col justify-between mt-4">
                     <div className="space-y-4">
-                        <h2 className="text-5xl md:text-7xl font-bold">
+                        <h2 className="text-5xl md:text-7xl xl:text-6xl 2xl:text-7xl font-bold">
                             Our Story
                         </h2>
-                        <p className="text-text-color text-2xl pt-4">
+                        <p className="text-text-color text-2xl xl:text-xl 2xl:text-2xl pt-4">
                             Zaina was founded in 2018 by two friends, Amelia and
                             Ethan, with a shared passion for exceptional coffee
                             and creating a welcoming community space. Inspired
