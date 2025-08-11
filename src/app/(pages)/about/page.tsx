@@ -1,25 +1,31 @@
 import ValueCard from "@/components/ui/ValueCard";
-import { Coffee, Heart, Users } from "lucide-react";
+import { Smile, Heart, Palette, Award } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 const values = [
     {
-        icon: <Coffee />,
-        title: "Quality",
+        icon: <Smile />,
+        title: "Warm Hospitality",
         description:
-            "We are committed to sourcing the highest quality beans from sustainable farms around the globe. Our coffee is roasted in-house to ensure freshness and exceptional flavor in every cup.",
+            "We believe that great coffee should come with a genuine smile. Every guest is welcomed like family, and every visit is a chance to make someone feel at home.",
     },
     {
         icon: <Heart />,
-        title: "Community",
+        title: "Authenticity",
         description:
-            "At Zaina, we believe in fostering a sense of community. Our café is a place where people can connect, relax, and enjoy meaningful conversations over a shared love for coffee.",
+            "From the ingredients we choose to the spaces we design, we stay true to who we are. Our Saudi roots and personal story are reflected in every detail.",
     },
     {
-        icon: <Users />,
-        title: "Sustainability",
+        icon: <Palette />,
+        title: "Creative Spirit",
         description:
-            "We are dedicated to minimizing our environmental impact by using eco-friendly practices, supporting local suppliers, and promoting ethical sourcing throughout our supply chain.",
+            "We bring fresh energy to everything we do—from our matcha flavors to our merch. Zaina Café is a place where ideas come to life, fueled by passion and purpose.",
+    },
+    {
+        icon: <Award />,
+        title: "Commitment to Quality",
+        description:
+            "Craftsmanship is at the core of our menu. We source premium beans, bake with care, and focus on delivering consistency, flavor, and excellence—every single time.",
     },
 ];
 
@@ -35,26 +41,39 @@ const page = () => {
                         alt="Zaina Cafe Interior"
                         width={1920}
                         height={1080}
-                        className="rounded-xl object-cover w-full xl:w-[600px]"
+                        className="rounded-xl object-cover w-full xl:w-[650px]"
                     />
                 </div>
 
-                <div className="w-full flex flex-col justify-between mt-4">
+                <div className="w-full flex flex-col justify-between">
                     <div className="space-y-4">
-                        <h2 className="text-5xl md:text-7xl xl:text-6xl 2xl:text-7xl font-bold">
+                        <h2 className="text-4xl md:text-6xl xl:text-5xl 2xl:text-6xl font-bold">
                             Our Story
                         </h2>
-                        <p className="text-text-color text-2xl xl:text-xl 2xl:text-2xl pt-4">
-                            Zaina was founded in 2018 by two friends, Amelia and
-                            Ethan, with a shared passion for exceptional coffee
-                            and creating a welcoming community space. Inspired
-                            by their travels and love for artisanal
-                            craftsmanship, they envisioned a café that
-                            celebrates the art of coffee making, from sourcing
-                            the finest beans to the perfect pour. Their journey
-                            began with a simple idea: to bring the world&apos;s
-                            best coffee to their neighborhood, served with
-                            warmth and a personal touch.
+                        <h3 className="text-xl md:text-2xl xl:text-xl 2xl:text-2xl font-bold mt-4">
+                            Zaina Café began with a sketch—and a dream.
+                        </h3>
+                        <p className="text-text-color text-xl xl:text-xl 2xl:text-xl pt-1">
+                            Founded by Zaina Sobhi Batterjee at just 15 years
+                            old, the café was born from a passion for coffee,
+                            design, and meaningful connection. What started as a
+                            small idea quickly grew into a vibrant brand shaped
+                            by heritage, hospitality, and heart.
+                        </p>
+
+                        <p className="text-text-color text-xl xl:text-xl 2xl:text-xl pt-1">
+                            Zaina Café is more than a name. It’s a space where
+                            Saudi culture is celebrated through specialty
+                            coffee, signature cookies, and heartfelt moments.
+                            Every detail—from the branding to the beans—carries
+                            Zaina’s personal touch and vision for creating
+                            spaces that bring people together.
+                        </p>
+
+                        <p className="text-text-color text-xl xl:text-xl 2xl:text-xl pt-1">
+                            Today, we’re proud to be growing across the
+                            region—one cup, one cookie, and one community at a
+                            time.
                         </p>
                     </div>
 
@@ -77,17 +96,17 @@ const page = () => {
                     Our Values
                 </h3>
                 <h2 className="text-2xl md:text-3xl font-bold mb-6">
-                    What We Stand For
+                    What Defines Zaina Café
                 </h2>
                 <p className="text-text-color mb-10 max-w-2xl">
-                    At Zaina, our core values guide everything we do, from the
-                    coffee we serve to the experiences we create for our
-                    customers. We believe in quality, community, and
-                    sustainability, and these principles are at the heart of our
-                    café’s identity.
+                    At Zaina Café, our values are more than words—they shape
+                    every cup we serve, every cookie we bake, and every
+                    connection we create. Rooted in Saudi heritage and inspired
+                    by modern lifestyles, these values guide us as we grow into
+                    communities across the region.
                 </p>
 
-                <div className="grid lg:grid-cols-3 gap-6">
+                <div className="grid lg:grid-cols-4 gap-6">
                     {values.map((val) => (
                         <ValueCard key={val.title} {...val} />
                     ))}
@@ -96,42 +115,23 @@ const page = () => {
 
             <div className="my-10 md:my-20">
                 <h2 className="text-2xl md:text-3xl font-bold mb-6">
-                    Meet the Team
+                    Meet Our Founder
                 </h2>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2">
+                <div className="w-fit">
                     <div className="card text-center ">
-                        <div className="w-full flex justify-center">
+                        <div className="w-full flex justify-start">
                             <Image
                                 src="/team1.png"
                                 alt="Zaina Cafe Interior"
                                 width={1920}
                                 height={1080}
-                                className="rounded-xl object-cover w-[350px] md:w-[500px]"
+                                className="rounded-xl object-cover w-[350px]"
                             />
                         </div>
                         <div className="mt-5">
-                            <h2 className="text-2xl">Zaina</h2>
-                            <p className="text-text-color ">
-                                Co-Founder & Head Barista
-                            </p>
-                        </div>
-                    </div>
-                    <div className="card text-center flex flex-col justify-center mt-10 lg:mt-0">
-                        <div className="w-full flex justify-center">
-                            <Image
-                                src="/team2.png"
-                                alt="Zaina Cafe Interior"
-                                width={1920}
-                                height={1080}
-                                className="rounded-xl object-cover w-[350px] md:w-[500px]"
-                            />
-                        </div>
-                        <div className="mt-5">
-                            <h2 className="text-2xl">Zaina</h2>
-                            <p className="text-text-color ">
-                                Co-Founder & Head Barista
-                            </p>
+                            <h2 className="text-2xl">Zaina Sobhi Batterjee</h2>
+                            <p className="text-text-color ">Co-Founder</p>
                         </div>
                     </div>
                 </div>
