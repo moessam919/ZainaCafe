@@ -11,21 +11,20 @@ const PhotoGallery = () => {
                         {/* Top text section */}
                         <div className=" p-6 ">
                             <h1
-                                className="text-2xl sm:text-3xl md:text-2xl lg:text-xl xl:text-2xl 2xl:text-4xl text-orange-color mb-5"
+                                className="text-2xl sm:text-2xl md:text-xl lg:text-xl xl:text-xl 2xl:text-3xl text-orange-color mb-5"
                                 style={{
                                     fontFamily: "Bebas Neue, sans-serif",
                                 }}
                             >
-                                Consectetur Adipiscing
+                                Crafted Moments, Rooted in Culture
                             </h1>
-                            <p className="text-text-color text-sm leading-relaxed">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut
-                                enim ad minim veniam, quis nostrud exercitation.
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
+                            <p className="text-text-color text-md leading-relaxed">
+                                At Zaina Café, every cup, cookie, and corner is
+                                crafted with intention. Inspired by Saudi
+                                heritage and a passion for bringing people
+                                together, we’ve created a space where quality
+                                meets comfort—and where every visit feels like
+                                home.
                             </p>
                         </div>
 
@@ -130,21 +129,20 @@ const PhotoGallery = () => {
                         {/* Bottom text section */}
                         <div className="p-6 ">
                             <h1
-                                className="text-2xl sm:text-3xl md:text-2xl lg:text-xl xl:text-2xl 2xl:text-4xl  text-orange-color mb-5"
+                                className="text-2xl sm:text-2xl md:text-xl lg:text-xl xl:text-xl 2xl:text-3xl text-orange-color mb-5"
                                 style={{
                                     fontFamily: "Bebas Neue, sans-serif",
                                 }}
                             >
-                                Consectetur Adipiscing
+                                More Than Coffee, It’s a Feeling
                             </h1>
-                            <p className="text-text-color text-sm leading-relaxed">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut
-                                enim ad minim veniam, quis nostrud exercitation.
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
+                            <p className="text-text-color text-md leading-relaxed">
+                                Whether you&apos;re starting your day, taking a
+                                pause, or meeting with friends, Zaina Café
+                                offers more than just great flavor. It’s a
+                                moment of connection, a celebration of culture,
+                                and a place designed for you to slow down and
+                                savor.
                             </p>
                         </div>
                     </div>
