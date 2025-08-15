@@ -2,14 +2,14 @@ import Image from "next/image";
 
 const PhotoGallery = () => {
     return (
-        <div className="relative  min-h-screen px-4 sm:px-8 md:px-16 lg:px-24 lg:mt-20 mt-20">
-            <div className=" mx-auto relative z-10">
+        <div className="relative min-h-screen px-4 sm:px-8 md:px-16 lg:px-24 lg:mt-20 mt-20">
+            <div className="mx-auto relative z-10">
                 {/* Gallery Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                    {/* Left column - Text and images */}
+                    {/* Left column */}
                     <div className="space-y-6">
                         {/* Top text section */}
-                        <div className=" p-6 ">
+                        <div className="p-6">
                             <h1
                                 className="text-2xl sm:text-2xl md:text-xl lg:text-xl xl:text-xl 2xl:text-3xl text-orange-color mb-5"
                                 style={{
@@ -29,105 +29,87 @@ const PhotoGallery = () => {
                         </div>
 
                         {/* Small image */}
-                        <div className="overflow-hidden">
-                            <div className="w-full h-full flex items-center justify-center">
-                                <Image
-                                    width={1920}
-                                    height={1080}
-                                    src="/two.png"
-                                    alt="Photo Gallery"
-                                    className="w-full "
-                                />
-                            </div>
+                        <div className="overflow-hidden border-[30px] border-[#f2f2f2] rounded-lg shadow-md">
+                            <Image
+                                width={1920}
+                                height={1080}
+                                src="/coockieshome2.jpg"
+                                alt="Photo Gallery"
+                                className="w-full"
+                            />
                         </div>
 
                         {/* Tall image */}
-                        <div className="  overflow-hidden  ">
-                            <div className="w-full h-full  flex items-center justify-center">
-                                <Image
-                                    width={1920}
-                                    height={1080}
-                                    src="/three.png"
-                                    alt="Photo Gallery"
-                                    className="w-full"
-                                />
-                            </div>
+                        <div className="overflow-hidden border-[30px] border-[#f2f2f2] rounded-lg shadow-md">
+                            <Image
+                                width={1920}
+                                height={1080}
+                                src="/15.05_ZC-14.jpg"
+                                alt="Photo Gallery"
+                                className="w-full"
+                            />
                         </div>
                     </div>
 
-                    {/* Middle column - Images */}
+                    {/* Middle column */}
                     <div className="space-y-6">
-                        {/* Large image */}
-                        <div className=" overflow-hidden  ">
-                            <div className="w-full h-full flex items-center justify-center">
-                                <Image
-                                    width={1920}
-                                    height={1080}
-                                    src="/one.png"
-                                    alt="Photo Gallery"
-                                    className="w-full"
-                                />
-                            </div>
+                        <div className="overflow-hidden border-[30px] border-[#f2f2f2] rounded-lg shadow-md">
+                            <Image
+                                width={1920}
+                                height={1080}
+                                src="/20250730_10.jpg"
+                                alt="Photo Gallery"
+                                className="w-full"
+                            />
                         </div>
 
-                        {/* Medium image */}
-                        <div className="overflow-hidden">
-                            <div className="w-full h-full flex items-center justify-center">
-                                <Image
-                                    width={1920}
-                                    height={1080}
-                                    src="/four.png"
-                                    alt="Photo Gallery"
-                                    className="w-full"
-                                />
-                            </div>
+                        <div className="overflow-hidden border-[30px] border-[#f2f2f2] rounded-lg shadow-md">
+                            <Image
+                                width={1920}
+                                height={1080}
+                                src="/20250730_ZCProductShoot_V1-44.jpg"
+                                alt="Photo Gallery"
+                                className="w-full"
+                            />
                         </div>
 
-                        {/* Wide image */}
-                        <div className="overflow-hidden">
-                            <div className="w-full h-full flex items-center justify-center">
-                                <Image
-                                    width={1920}
-                                    height={1080}
-                                    src="/five.png"
-                                    alt="Photo Gallery"
-                                    className="w-full"
-                                />
-                            </div>
+                        <div className="overflow-hidden border-[30px] border-[#f2f2f2] rounded-lg shadow-md">
+                            <Image
+                                width={1920}
+                                height={1080}
+                                src="/DSC07642.jpg"
+                                alt="Photo Gallery"
+                                className="w-full"
+                            />
                         </div>
                     </div>
 
-                    {/* Right column - Images and text */}
+                    {/* Right column */}
                     <div className="space-y-6">
                         <div className="h-48 hidden lg:flex"></div>
-                        {/* Small image */}
-                        <div className=" overflow-hidden">
-                            <div className="w-full h-full flex items-center justify-center">
-                                <Image
-                                    width={1920}
-                                    height={1080}
-                                    src="/six.png"
-                                    alt="Photo Gallery"
-                                    className="w-full"
-                                />
-                            </div>
+
+                        <div className="overflow-hidden border-[30px] border-[#f2f2f2] rounded-lg shadow-md">
+                            <Image
+                                width={1920}
+                                height={1080}
+                                src="/20250730_ZCProductShoot_V1-50.jpg"
+                                alt="Photo Gallery"
+                                className="w-full"
+                            />
                         </div>
 
-                        {/* Large image */}
-                        <div className="overflow-hidden shadow-lg ">
-                            <div className="w-full h-full flex items-center justify-center">
-                                <Image
-                                    width={1920}
-                                    height={1080}
-                                    src="/seven.png"
-                                    alt="Photo Gallery"
-                                    className="w-full"
-                                />
-                            </div>
+                        <div className="overflow-hidden border-[30px] border-[#f2f2f2] rounded-lg shadow-md">
+                            <Image
+                                width={1920}
+                                height={1080}
+                                src="/DSC07160.jpg"
+                                alt="Photo Gallery"
+                                className="w-full"
+                            />
                         </div>
 
-                        {/* Bottom text section */}
-                        <div className="p-6 ">
+                        {/* Bottom text */}
+                        <div className="p-6">
                             <h1
                                 className="text-2xl sm:text-2xl md:text-xl lg:text-xl xl:text-xl 2xl:text-3xl text-orange-color mb-5"
                                 style={{

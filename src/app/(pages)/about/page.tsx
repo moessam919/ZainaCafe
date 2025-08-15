@@ -37,11 +37,11 @@ const page = () => {
                 {/* Image */}
                 <div className="w-full order-1 xl:order-0">
                     <Image
-                        src="/cafe.png"
+                        src="/aboutShot.jpg"
                         alt="Zaina Cafe Interior"
                         width={1920}
                         height={1080}
-                        className="rounded-xl object-cover w-full xl:w-[650px]"
+                        className="rounded-xl object-cover w-full xl:w-[650px] h-full"
                     />
                 </div>
 
@@ -122,7 +122,7 @@ const page = () => {
                     <div className="card text-center ">
                         <div className="w-full flex justify-start">
                             <Image
-                                src="/team1.png"
+                                src="/Zaina.jpg"
                                 alt="Zaina Cafe Interior"
                                 width={1920}
                                 height={1080}
@@ -131,7 +131,7 @@ const page = () => {
                         </div>
                         <div className="mt-5">
                             <h2 className="text-2xl">Zaina Sobhi Batterjee</h2>
-                            <p className="text-text-color ">Co-Founder</p>
+                            <p className="text-text-color ">Founder</p>
                         </div>
                     </div>
                 </div>

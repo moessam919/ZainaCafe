@@ -66,40 +66,18 @@ const Page = () => {
             image: "/totibag.jpg",
         },
         {
-            id: 2,
-            title: "Premium Tote Bag",
-            category: "bags",
-            color: "Black",
-            image: "/shirt4.jpg",
-        },
-        {
-            id: 3,
-            title: "Essential T-Shirt",
-            category: "shirts",
-            color: "White",
-            image: "/shirt1.jpg",
-        },
-        {
             id: 4,
-            title: "Vintage T-Shirt",
+            title: "T-Shirt",
             category: "shirts",
             color: "Heather Gray",
-            image: "/shirt2.jpg",
+            image: "/T-shirt.jpg",
         },
         {
-            id: 5,
-            title: "Logo T-Shirt",
-            category: "shirts",
-            color: "Navy",
-            image: "/shirt3.jpg",
-        },
-
-        {
-            id: 6,
-            title: "Canvas Tote Bag",
+            id: 2,
+            title: "Coming Soon",
             category: "bags",
-            color: "Beige",
-            image: "/bag2.jpg",
+            color: "Black",
+            image: "/comingsoonmerch.jpg",
         },
     ];
 
@@ -441,8 +419,8 @@ const Page = () => {
 
                     <div className="mx-auto">
                         {/* Three Cards in One Row */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            {/* Signature Cookie Card */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8">
+                            {/* Carob Chip Cookie Card */}
                             <div className="bg-gray-200 rounded-2xl overflow-hidden shadow-lg flex flex-col">
                                 {/* Top Image */}
                                 <div className="h-72">
@@ -450,7 +428,7 @@ const Page = () => {
                                         width={1920}
                                         height={1080}
                                         src="/cookies1.jpg"
-                                        alt="Signature Cookie"
+                                        alt="Carob Chip"
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
@@ -458,9 +436,9 @@ const Page = () => {
                                 {/* Bottom Text */}
                                 <div className="p-6  relative overflow-auto flex-1">
                                     <h2 className=" text-2xl font-bold mb-4">
-                                        Zaina Signature Cookie
+                                        Carob Chip
                                     </h2>
-                                    <p className=" mb-4 leading-relaxed text-base">
+                                    <p className="leading-relaxed text-base">
                                         Our signature chocolate chip cookie with
                                         a hint of sea salt and premium Belgian
                                         chocolate chips. Baked fresh daily to
@@ -470,7 +448,7 @@ const Page = () => {
                                 </div>
                             </div>
 
-                            {/* Traditional Ma'moul Card */}
+                            {/* Double chocolate Chip Card */}
                             <div className="bg-gray-200 rounded-2xl overflow-hidden shadow-lg flex flex-col">
                                 {/* Top Image */}
                                 <div className="h-72">
@@ -478,7 +456,7 @@ const Page = () => {
                                         width={1920}
                                         height={1080}
                                         src="/cookies2.jpg"
-                                        alt="Ma'moul Cookies"
+                                        alt="Double chocolate Chip"
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
@@ -486,9 +464,9 @@ const Page = () => {
                                 {/* Bottom Text */}
                                 <div className="p-6  relative overflow-auto flex-1">
                                     <h2 className="text-2xl font-bold mb-4">
-                                        Traditional Ma&apos;moul
+                                        Double chocolate Chip
                                     </h2>
-                                    <p className="mb-4 leading-relaxed text-base">
+                                    <p className="leading-relaxed text-base">
                                         Authentic Middle Eastern shortbread
                                         cookies filled with dates, pistachios,
                                         or walnuts. Made following traditional
@@ -499,7 +477,7 @@ const Page = () => {
                                 </div>
                             </div>
 
-                            {/* Seasonal Cookies Card */}
+                            {/* Chocolate Chip Cookies Card */}
                             <div className="bg-gray-200 rounded-2xl overflow-hidden shadow-lg flex flex-col">
                                 {/* Top Image */}
                                 <div className="h-72">
@@ -507,7 +485,7 @@ const Page = () => {
                                         width={1920}
                                         height={1080}
                                         src="/cookies3.jpg"
-                                        alt="Seasonal Cookies"
+                                        alt="Chocolate Chip Cookies"
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
@@ -515,9 +493,37 @@ const Page = () => {
                                 {/* Bottom Text */}
                                 <div className="p-6  relative overflow-auto flex-1">
                                     <h2 className=" text-2xl font-bold mb-4">
-                                        Seasonal Collection
+                                        Chocolate Chip
                                     </h2>
-                                    <p className=" mb-4 leading-relaxed text-base">
+                                    <p className="leading-relaxed text-base">
+                                        Limited-time seasonal flavors that
+                                        celebrate the best of each season. From
+                                        spiced gingerbread in winter to
+                                        refreshing lemon in summer, our rotating
+                                        collection ensures there&aops;s always
+                                        something new to discover.
+                                    </p>
+                                </div>
+                            </div>
+                            {/* Miso white chocolate Chip Cookies Card */}
+                            <div className="bg-gray-200 rounded-2xl overflow-hidden shadow-lg flex flex-col">
+                                {/* Top Image */}
+                                <div className="h-72">
+                                    <Image
+                                        width={1920}
+                                        height={1080}
+                                        src="/MisowhitechocolateChip.jpg"
+                                        alt="Miso white chocolate Chip"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+
+                                {/* Bottom Text */}
+                                <div className="p-6  relative overflow-auto flex-1">
+                                    <h2 className=" text-2xl font-bold mb-4">
+                                        Miso white chocolate Chip
+                                    </h2>
+                                    <p className="leading-relaxed text-base">
                                         Limited-time seasonal flavors that
                                         celebrate the best of each season. From
                                         spiced gingerbread in winter to
@@ -582,18 +588,26 @@ const Page = () => {
                                                                 height={1080}
                                                                 src={item.image}
                                                                 alt={item.title}
-                                                                className="w-full h-full object-cover rounded-xl hover:scale-110 transition-transform duration-300 ease-in-out"
+                                                                className={`w-full h-full object-cover rounded-xl hover:scale-110 transition-transform duration-300 ease-in-out ${
+                                                                    item.id ===
+                                                                    2
+                                                                        ? "blur-sm"
+                                                                        : ""
+                                                                }`}
                                                             ></Image>
                                                         </div>
                                                         <h3 className="font-bold text-gray-800 mb-2 text-2xl">
                                                             {item.title}
                                                         </h3>
-                                                        <p className="text-gray-600 text-md">
-                                                            Premium quality{" "}
-                                                            {item.category} in{" "}
-                                                            {item.color.toLowerCase()}{" "}
-                                                            color.
-                                                        </p>
+                                                        {item.id !== 2 && (
+                                                            <p className="text-gray-600 text-md">
+                                                                Premium quality{" "}
+                                                                {item.category}{" "}
+                                                                in{" "}
+                                                                {item.color.toLowerCase()}{" "}
+                                                                color.
+                                                            </p>
+                                                        )}
                                                     </div>
                                                 ))}
                                         </div>
@@ -709,7 +723,7 @@ const Page = () => {
 
                         {/* Coming Soon Card */}
                         <div className="relative rounded-3xl overflow-hidden group bg-white/40 backdrop-blur-lg shadow-lg border border-gray-200 opacity-80">
-                            <div className="h-64 overflow-hidden grayscale">
+                            <div className="h-64 overflow-hidden grayscale blur-xs">
                                 <Image
                                     src="/comingsoon.jpg"
                                     alt="Coming Soon"
