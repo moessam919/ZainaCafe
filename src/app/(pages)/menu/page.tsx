@@ -387,18 +387,20 @@ const Page = () => {
                         </div>
 
                         {/* Slider Controls */}
-                        <button
-                            onClick={prevCoffeeSlide}
-                            className="absolute group cursor-pointer -left-15 top-1/2 transform -translate-y-1/2 bg-white hover:bg-amber-600 shadow-lg rounded-full p-3 hover:shadow-xl transition-all duration-300"
-                        >
-                            <ChevronLeft className="w-6 h-6 text-gray-600 group-hover:text-white" />
-                        </button>
-                        <button
-                            onClick={nextCoffeeSlide}
-                            className="absolute group cursor-pointer -right-15 top-1/2 transform -translate-y-1/2 bg-white hover:bg-amber-600 shadow-lg rounded-full p-3 hover:shadow-xl transition-all duration-300"
-                        >
-                            <ChevronRight className="w-6 h-6 text-gray-600 group-hover:text-white" />
-                        </button>
+                        <div className="hidden md:block">
+                            <button
+                                onClick={prevCoffeeSlide}
+                                className="absolute group cursor-pointer -left-15 top-1/2 transform -translate-y-1/2 bg-white hover:bg-amber-600 shadow-lg rounded-full p-3 hover:shadow-xl transition-all duration-300"
+                            >
+                                <ChevronLeft className="w-6 h-6 text-gray-600 group-hover:text-white" />
+                            </button>
+                            <button
+                                onClick={nextCoffeeSlide}
+                                className="absolute group cursor-pointer -right-15 top-1/2 transform -translate-y-1/2 bg-white hover:bg-amber-600 shadow-lg rounded-full p-3 hover:shadow-xl transition-all duration-300"
+                            >
+                                <ChevronRight className="w-6 h-6 text-gray-600 group-hover:text-white" />
+                            </button>
+                        </div>
 
                         {/* Slider Indicators */}
                         <div className="flex justify-center mt-8 gap-2 ">
@@ -599,21 +601,21 @@ const Page = () => {
                                 )}
                             </div>
                         </div>
-
                         {/* Slider Controls */}
-                        <button
-                            onClick={prevMerchSlide}
-                            className="group absolute cursor-pointer -left-15 top-1/2 transform -translate-y-1/2 bg-white hover:bg-[#054661] shadow-lg rounded-full p-3 hover:shadow-xl transition-all duration-300"
-                        >
-                            <ChevronLeft className="w-6 h-6 text-gray-600 group-hover:text-white" />
-                        </button>
-                        <button
-                            onClick={nextMerchSlide}
-                            className="group absolute cursor-pointer -right-15 top-1/2 transform -translate-y-1/2 bg-white hover:bg-[#054661] shadow-lg rounded-full p-3 hover:shadow-xl transition-all duration-300"
-                        >
-                            <ChevronRight className="w-6 h-6 text-gray-600 group-hover:text-white" />
-                        </button>
-
+                        <div className="hidden md:block">
+                            <button
+                                onClick={prevMerchSlide}
+                                className="group absolute cursor-pointer -left-15 top-1/2 transform -translate-y-1/2 bg-white hover:bg-[#054661] shadow-lg rounded-full p-3 hover:shadow-xl transition-all duration-300"
+                            >
+                                <ChevronLeft className="w-6 h-6 text-gray-600 group-hover:text-white" />
+                            </button>
+                            <button
+                                onClick={nextMerchSlide}
+                                className="group absolute cursor-pointer -right-15 top-1/2 transform -translate-y-1/2 bg-white hover:bg-[#054661] shadow-lg rounded-full p-3 hover:shadow-xl transition-all duration-300"
+                            >
+                                <ChevronRight className="w-6 h-6 text-gray-600 group-hover:text-white" />
+                            </button>
+                        </div>
                         {/* Slider Indicators */}
                         <div className="flex justify-center mt-8 gap-2 ">
                             {Array.from(
