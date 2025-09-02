@@ -591,7 +591,7 @@ const Page = () => {
                                                                 className={`w-full h-full object-cover rounded-xl hover:scale-110 transition-transform duration-300 ease-in-out ${
                                                                     item.id ===
                                                                     2
-                                                                        ? "blur-sm"
+                                                                        ? "blur-md"
                                                                         : ""
                                                                 }`}
                                                             ></Image>
