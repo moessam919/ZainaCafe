@@ -4,21 +4,21 @@ import Image from "next/image";
 const products = [
     {
         id: 1,
-        name: "Latte",
-        price: "AED 17.25",
-        image: "/LatteCard.jpg",
+        name: "Latte (Saffron & Almond)",
+        image: "/ZC - August Post 5 - Latte (Saffron & Almond)-Web.png",
+        disc: "Silky latte infused with saffron and almond for a warm, aromatic finish.",
     },
     {
         id: 2,
-        name: "Cappuccino",
-        price: "AED 17.25",
-        image: "/CappuccinoCard.jpg",
+        name: "Matcha Latte",
+        image: "/ZC - August Post 2 - Matcha Latte.png",
+        disc: "Creamy matcha with balanced sweetness and umami, served ice-cold or hot.",
     },
     {
         id: 3,
-        name: "Hot Chocolate",
-        price: "AED 17.25",
-        image: "/HotChocolateCard.jpg",
+        name: "Carob Cookies",
+        image: "/ZC-August-Post-3-Cookies-2-Slide03-copy.png",
+        disc: "Soft-baked carob cookies with a rich, cocoa-like flavor and a hint of caramel.",
     },
 ];
 
@@ -57,21 +57,16 @@ const OurMenu = () => {
                             </div>
 
                             {/* Product Info */}
-                            <div className="p-4 flex justify-between mt-8">
+                            <div className="p-4 flex justify-between">
                                 <div>
                                     <h3 className="text-lg font-semibold text-text-color ">
                                         {product.name}
                                     </h3>
-                                    <p className="text-sm text-text-color">
-                                        16 oz • Hot • 16 oz
-                                    </p>
-                                </div>
-
-                                {/* Price and Add to Cart */}
-                                <div className="flex items-center justify-between">
-                                    <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200">
-                                        {product.price}
-                                    </button>
+                                    {product.disc && (
+                                        <p className="text-sm text-gray-600 mt-1">
+                                            {product.disc}
+                                        </p>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -79,7 +74,7 @@ const OurMenu = () => {
                 </div>
             </div>
             <div className="flex flex-col justify-center items-center mt-8">
-                <a href="/menu.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="/menu">
                     <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-3xl md:text-5xl font-medium transition-colors duration-200 flex gap-2 cursor-pointer">
                         Full Menu
                         <ChevronRight className="size-10 md:size-14" />

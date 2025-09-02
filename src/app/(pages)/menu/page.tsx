@@ -75,9 +75,9 @@ const Page = () => {
         {
             id: 2,
             title: "Coming Soon",
-            category: "bags",
+            category: "Coming Soon",
             color: "Black",
-            image: "/comingsoonmerch.jpg",
+            image: "/ZC - August Post 4 - Merch.png",
         },
     ];
 
@@ -222,7 +222,7 @@ const Page = () => {
                                 <Image
                                     width={1920}
                                     height={1080}
-                                    src="/IcedMatchaLatte.jpg"
+                                    src="/DSC01618-1.png"
                                     alt="Matcha"
                                     className="w-full h-full object-cover"
                                 />
@@ -280,7 +280,7 @@ const Page = () => {
                                 <Image
                                     width={1920}
                                     height={1080}
-                                    src="/IcedBlueMatcha.jpg"
+                                    src="/DSC01622-1.png"
                                     alt="Matcha"
                                     className="w-full h-full object-cover"
                                 />
@@ -669,7 +669,9 @@ const Page = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                         {/* Dubai Card */}
                         <div
-                            onClick={() => window.open("menu.pdf", "_blank")}
+                            onClick={() =>
+                                window.open("DubaiMenu.pdf", "_blank")
+                            }
                             className="relative cursor-pointer rounded-3xl overflow-hidden group bg-white/60 backdrop-blur-lg shadow-lg hover:shadow-2xl border border-gray-200 hover:border-[#054661] transition-all duration-300"
                         >
                             <div className="h-64 overflow-hidden">
@@ -696,7 +698,9 @@ const Page = () => {
 
                         {/* Ajman Card */}
                         <div
-                            onClick={() => window.open("menu.pdf", "_blank")}
+                            onClick={() =>
+                                window.open("AjmanMenu.pdf", "_blank")
+                            }
                             className="relative cursor-pointer rounded-3xl overflow-hidden group bg-white/60 backdrop-blur-lg shadow-lg hover:shadow-2xl border border-gray-200 hover:border-[#054661] transition-all duration-300"
                         >
                             <div className="h-64 overflow-hidden">
