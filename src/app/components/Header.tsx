@@ -33,7 +33,7 @@ const Header = () => {
             href: "https://www.instagram.com/zainacafe/",
             label: "Instagram",
         },
-        { icon: Twitter, href: "#", label: "Twitter" },
+        { icon: Twitter, href: "https://x.com/Zaina_Cafe", label: "Twitter" },
     ];
 
     return (

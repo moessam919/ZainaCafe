@@ -88,7 +88,7 @@ const Footer: React.FC = () => {
                                 <Instagram className="w-5 h-5" />
                             </a>
                             <a
-                                href="#"
+                                href="https://x.com/Zaina_Cafe"
                                 className="w-10 h-10  hover:bg-orange-500 rounded-full flex items-center justify-center transition-colors duration-300"
                                 aria-label="Twitter"
                             >
