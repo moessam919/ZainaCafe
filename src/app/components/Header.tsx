@@ -23,8 +23,16 @@ const Header = () => {
     ];
 
     const socialLinks = [
-        { icon: Facebook, href: "#", label: "Facebook" },
-        { icon: Instagram, href: "#", label: "Instagram" },
+        {
+            icon: Facebook,
+            href: "https://www.facebook.com/zainacafedubai",
+            label: "Facebook",
+        },
+        {
+            icon: Instagram,
+            href: "https://www.instagram.com/zainacafe/",
+            label: "Instagram",
+        },
         { icon: Twitter, href: "#", label: "Twitter" },
     ];
 

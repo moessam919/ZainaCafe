@@ -74,14 +74,14 @@ const Footer: React.FC = () => {
                         {/* Social Media Icons */}
                         <div className="flex justify-end space-x-4">
                             <a
-                                href="#"
+                                href="https://www.facebook.com/zainacafedubai"
                                 className="w-10 h-10  hover:bg-orange-500 rounded-full flex items-center justify-center transition-colors duration-300"
                                 aria-label="Facebook"
                             >
                                 <Facebook className="w-5 h-5" />
                             </a>
                             <a
-                                href="#"
+                                href="https://www.instagram.com/zainacafe/"
                                 className="w-10 h-10  hover:bg-orange-500 rounded-full flex items-center justify-center transition-colors duration-300"
                                 aria-label="Instagram"
                             >
