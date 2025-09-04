@@ -52,7 +52,7 @@ const page = () => {
                     </div>
                     <div>
                         <p className="font-medium text-text-color">Email</p>
-                        <p className="text-lg">info@zainacafe.com</p>
+                        <p className="text-lg">info@zaina-cafe.com</p>
                     </div>
                 </div>
             </div>

@@ -28,23 +28,23 @@ const PhotoGallery = () => {
                             </p>
                         </div>
 
-                        {/* Small image */}
-                        <div className="overflow-hidden border-[30px] border-[#f2f2f2] rounded-lg shadow-md">
-                            <Image
-                                width={1920}
-                                height={1080}
-                                src="/ZC-August-Post-3-Cookies-2-Slide03-copy.png"
-                                alt="Photo Gallery"
-                                className="w-full"
-                            />
-                        </div>
-
                         {/* Tall image */}
                         <div className="overflow-hidden border-[30px] border-[#f2f2f2] rounded-lg shadow-md">
                             <Image
                                 width={1920}
                                 height={1080}
                                 src="/DSC01618-1.png"
+                                alt="Photo Gallery"
+                                className="w-full"
+                            />
+                        </div>
+
+                        {/* Small image */}
+                        <div className="overflow-hidden border-[30px] border-[#f2f2f2] rounded-lg shadow-md">
+                            <Image
+                                width={1920}
+                                height={1080}
+                                src="/20250730_ZCProductShoot_V1-50.jpg"
                                 alt="Photo Gallery"
                                 className="w-full"
                             />
@@ -77,7 +77,7 @@ const PhotoGallery = () => {
                             <Image
                                 width={1920}
                                 height={1080}
-                                src="/20250730_ZCProductShoot_V1-50.jpg"
+                                src="/ZC-August-Post-3-Cookies-2-Slide04-+.png"
                                 alt="Photo Gallery"
                                 className="w-full"
                             />
@@ -86,7 +86,7 @@ const PhotoGallery = () => {
 
                     {/* Right column */}
                     <div className="space-y-6">
-                        <div className="h-32 hidden lg:flex"></div>
+                        <div className="h-24 hidden lg:flex"></div>
 
                         <div className="overflow-hidden border-[30px] border-[#f2f2f2] rounded-lg shadow-md">
                             <Image
