@@ -201,10 +201,10 @@ export default function BranchLocator() {
             {drawerOpen && (
                 <div className="fixed inset-0 z-50 flex flex-col justify-end">
                     <div
-                        className="absolute inset-0 bg-black/30"
+                        className="absolute inset-0 bg-black/30 transition-opacity duration-300"
                         onClick={() => setDrawerOpen(false)}
                     />
-                    <div className="relative bg-white rounded-t-2xl p-4 max-h-[70vh] overflow-y-auto shadow-lg">
+                    <div className="relative bg-white rounded-t-2xl p-4 max-h-[70vh] overflow-y-auto shadow-lg transform translate-y-0 transition-transform duration-300 animate-in slide-in-from-bottom">
                         <div className="flex justify-between items-center mb-3">
                             <h3 className="text-lg font-semibold">
                                 Nearest branches
@@ -265,7 +265,7 @@ export default function BranchLocator() {
 
             {/* Map area */}
             <div className="flex-1 relative overflow-hidden">
-                <div className="md:hidden w-full bg-white border-b shadow p-3">
+                <div className="md:hidden w-full bg-white border-b shadow p-3 z-50">
                     <button
                         onClick={() => setDrawerOpen(true)}
                         className="w-full bg-amber-600 text-white py-3 rounded-lg font-medium"
