@@ -122,11 +122,11 @@ const page = () => {
                     <div className="card text-center ">
                         <div className="w-full flex justify-start">
                             <Image
-                                src="/Zaina.jpg"
+                                src="/ZainaPhoto.png"
                                 alt="Zaina Cafe Interior"
                                 width={1920}
                                 height={1080}
-                                className="rounded-xl object-cover w-[350px]"
+                                className="rounded-xl object-cover w-[350px] h-[350px]"
                             />
                         </div>
                         <div className="mt-5">

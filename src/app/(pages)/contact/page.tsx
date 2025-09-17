@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Instagram, Facebook, Twitter } from "lucide-react";
-import Image from "next/image";
+import BranchLocator from "@/components/BranchLocator";
 
 const page = () => {
     return (
@@ -17,14 +17,8 @@ const page = () => {
 
             {/* Location Image */}
             <div className="mt-10">
-                <h3 className="text-xl font-semibold mb-4">Our Location</h3>
-                <Image
-                    src="/location.png"
-                    alt="Our location map"
-                    width={900}
-                    height={400}
-                    className="rounded-xl object-cover w-full"
-                />
+                <h3 className="text-xl font-semibold mb-4">Our Locations</h3>
+                <BranchLocator />
             </div>
 
             {/* Contact Info */}
@@ -44,11 +38,20 @@ const page = () => {
                         <p className="font-medium text-text-color">
                             Opening Hours
                         </p>
-                        <p className="text-lg">7 AM - 8 PM, Monday - Sunday</p>
+                        <p className="text-lg">8 AM - 9 PM</p>
                     </div>
                     <div>
                         <p className="font-medium text-text-color">Phone</p>
-                        <p className="text-lg">(555) 123–4567</p>
+                        <p className="text-lg mb-2 ">
+                            <a href={`tel:${"+971 4 389 0360"}`}>
+                                UAE Number: +971 4 389 0360
+                            </a>
+                        </p>
+                        <p className="text-lg">
+                            <a href={`tel:${"+971 4 389 0360"}`}>
+                                KSA Number: +966 50 051 8553
+                            </a>
+                        </p>
                     </div>
                     <div>
                         <p className="font-medium text-text-color">Email</p>
