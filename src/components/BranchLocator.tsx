@@ -1,10 +1,26 @@
+// BranchLocator.tsx
 "use client";
 
-import React, { useEffect, useMemo, useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
-import L from "leaflet";
+import React, { useMemo, useState } from "react";
+import dynamic from "next/dynamic";
 import { branches, Branch } from "../lib/branches";
 import { Clock, MapPin, Phone } from "lucide-react";
+
+// Dynamically import the map component with SSR disabled
+const DynamicMap = dynamic(() => import("./MapComponent"), {
+    ssr: false,
+    loading: () => (
+        <div className="flex-1 bg-gradient-to-b from-gray-50 to-gray-100 flex items-center justify-center h-full">
+            <div className="text-center bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-sm">
+                <div className="relative w-12 h-12 mx-auto mb-3">
+                    <div className="absolute inset-0 rounded-full border-t-2 border-r-2 border-amber-600 animate-spin"></div>
+                    <div className="absolute inset-2 rounded-full border-b-2 border-l-2 border-amber-400 animate-spin animate-delay-150"></div>
+                </div>
+                <p className="text-gray-700 font-medium">Loading map...</p>
+            </div>
+        </div>
+    ),
+});
 
 // Haversine distance (km)
 const calculateDistance = (
@@ -28,43 +44,6 @@ const calculateDistance = (
 
 type LatLng = { lat: number; lng: number };
 
-function FlyTo({
-    position,
-    zoom = 13,
-}: {
-    position: LatLng | null;
-    zoom?: number;
-}) {
-    const map = useMap();
-    useEffect(() => {
-        if (position) {
-            map.flyTo([position.lat, position.lng], zoom, {
-                animate: true,
-                duration: 1.0,
-            });
-        }
-    }, [position, zoom, map]);
-    return null;
-}
-
-/* ========== Icons ========== */
-const defaultIcon = new L.Icon({
-    iconUrl: "https://maps.google.com/mapfiles/ms/icons/orange-dot.png",
-    iconSize: [28, 28],
-    iconAnchor: [14, 28],
-});
-const selectedIcon = new L.Icon({
-    iconUrl: "https://maps.google.com/mapfiles/ms/icons/green-dot.png",
-    iconSize: [34, 34],
-    iconAnchor: [17, 34],
-});
-const userIcon = new L.Icon({
-    iconUrl: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png",
-    iconSize: [30, 30],
-    iconAnchor: [15, 30],
-});
-
-/* ========== Component ========== */
 export default function BranchLocator() {
     const [userPos, setUserPos] = useState<LatLng | null>(null);
     const [sortedBranches, setSortedBranches] = useState<
@@ -134,8 +113,6 @@ export default function BranchLocator() {
         [sortedBranches, search]
     );
 
-    const defaultCenter: LatLng = { lat: 24.5, lng: 54.5 };
-
     return (
         <div className="min-h-[500px] md:min-h-[400px] flex bg-gray-50 relative">
             {/* Sidebar Desktop */}
@@ -172,7 +149,6 @@ export default function BranchLocator() {
 
                 {error && <p className="text-sm text-red-600 mb-2">{error}</p>}
 
-                {/* 🔹 عرض 5 فقط + Scroll */}
                 <div className="flex-1 overflow-auto max-h-[400px]">
                     <h3 className="text-lg font-semibold mb-3">
                         Nearest branches ({filteredBranches.length})
@@ -221,17 +197,14 @@ export default function BranchLocator() {
                 </div>
             </aside>
 
+            {/* Mobile drawer */}
             {drawerOpen && (
                 <div className="fixed inset-0 z-50 flex flex-col justify-end">
-                    {/* Overlay */}
                     <div
                         className="absolute inset-0 bg-black/30"
                         onClick={() => setDrawerOpen(false)}
                     />
-
-                    {/* Bottom Sheet */}
                     <div className="relative bg-white rounded-t-2xl p-4 max-h-[70vh] overflow-y-auto shadow-lg">
-                        {/* Header */}
                         <div className="flex justify-between items-center mb-3">
                             <h3 className="text-lg font-semibold">
                                 Nearest branches
@@ -241,7 +214,6 @@ export default function BranchLocator() {
                             </button>
                         </div>
 
-                        {/* Search */}
                         <input
                             type="text"
                             value={search}
@@ -250,7 +222,6 @@ export default function BranchLocator() {
                             className="w-full p-3 border rounded-xl mb-4"
                         />
 
-                        {/* Locate button */}
                         <button
                             onClick={handleLocate}
                             className="w-full mb-4 bg-amber-600 text-white py-3 rounded-xl flex justify-center gap-1 items-center"
@@ -258,7 +229,6 @@ export default function BranchLocator() {
                             Locate me <MapPin />
                         </button>
 
-                        {/* Branch list */}
                         {filteredBranches.slice(0, 5).map((b) => (
                             <div
                                 key={b.id}
@@ -303,62 +273,14 @@ export default function BranchLocator() {
                         ☰ Nearest branches
                     </button>
                 </div>
-                <MapContainer
-                    center={[defaultCenter.lat, defaultCenter.lng]}
-                    zoom={6}
-                    style={{ width: "100%", height: "100%", zIndex: 0 }}
-                    scrollWheelZoom={true}
-                    attributionControl={false}
-                >
-                    <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
-                    {sortedBranches.map((b) => (
-                        <Marker
-                            key={b.id}
-                            position={[b.lat, b.lng]}
-                            icon={
-                                selectedBranch?.id === b.id
-                                    ? selectedIcon
-                                    : defaultIcon
-                            }
-                            eventHandlers={{
-                                click: () => setSelectedBranch(b),
-                            }}
-                        >
-                            <Popup>
-                                <div>
-                                    <div className="font-semibold">
-                                        {b.name}
-                                    </div>
-                                    <div className="text-sm text-gray-600">
-                                        {b.address ?? b.city}
-                                    </div>
-                                </div>
-                            </Popup>
-                        </Marker>
-                    ))}
-
-                    {userPos && (
-                        <Marker
-                            position={[userPos.lat, userPos.lng]}
-                            icon={userIcon}
-                        >
-                            <Popup>📍 Your current location</Popup>
-                        </Marker>
-                    )}
-
-                    <FlyTo
-                        position={
-                            selectedBranch
-                                ? {
-                                      lat: selectedBranch.lat,
-                                      lng: selectedBranch.lng,
-                                  }
-                                : userPos ?? null
-                        }
-                        zoom={13}
-                    />
-                </MapContainer>
+                {/* Dynamic Map Component */}
+                <DynamicMap
+                    sortedBranches={sortedBranches}
+                    selectedBranch={selectedBranch}
+                    setSelectedBranch={setSelectedBranch}
+                    userPos={userPos}
+                />
 
                 {/* Bottom card */}
                 {selectedBranch && (
