@@ -30,8 +30,12 @@ const page = () => {
                     <div>
                         <p className="font-medium text-text-color">Address</p>
                         <p className="text-lg w-[80%]">
-                            Saudi German Hospital, Dubai Center of Excellence,
-                            Women & Children Hospital Hessa Street, Dubai, UAE
+                            <span className="font-semibold">UAE Branches:</span>{" "}
+                            Dubai , Ajman
+                        </p>
+                        <p className="text-lg w-[80%]">
+                            <span className="font-semibold">KSA Branches:</span>{" "}
+                            Riyadh , Jeddah
                         </p>
                     </div>
                     <div>
@@ -44,12 +48,18 @@ const page = () => {
                         <p className="font-medium text-text-color">Phone</p>
                         <p className="text-lg mb-2 ">
                             <a href={`tel:${"+971 4 389 0360"}`}>
-                                UAE Number: +971 4 389 0360
+                                <span className="font-semibold">
+                                    UAE Number:
+                                </span>{" "}
+                                +971 4 389 0360
                             </a>
                         </p>
                         <p className="text-lg">
                             <a href={`tel:${"+971 4 389 0360"}`}>
-                                KSA Number: +966 50 051 8553
+                                <span className="font-semibold">
+                                    KSA Number:{" "}
+                                </span>{" "}
+                                +966 50 051 8553
                             </a>
                         </p>
                     </div>
