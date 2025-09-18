@@ -31,7 +31,7 @@ const EveryCup = () => {
                 </p>
             </div>
 
-            <div className="bg-[#f1f2f2] px-4 sm:px-8 md:px-16 lg:px-24 py-10 mt-8 md:mt-4 flex flex-col md:flex-row items-center relative">
+            <div className="bg-[#f1f2f2] px-4 sm:px-8 md:px-16 lg:px-24 py-10 mt-8 md:mt-4 flex items-center relative w-full">
                 <div className="absolute top-[-7%] sm:-top-5 right-[20%] lg:top-[-6%] xl:-top-7 lg:right-[10%] 2xl:-top-9">
                     <Image
                         width={1920}
@@ -50,20 +50,23 @@ const EveryCup = () => {
                         className="w-[260px] md:w-[260px] lg:w-[400px] xl:w-90 2xl:w-[30rem]"
                     />
                 </div>
-                <p className="text-[18px] md:text-[20px] lg:text-[22px] xl:text-[40px] text-text-color  md:w-[49%]">
-                    We believe coffee is more than just a drink — it&apos;s a
-                    quiet moment shared, a connection made. Here, between two
-                    cups, stories unfold and warmth takes shape.!
-                </p>
 
-                <div className="w-full">
-                    <Image
-                        width={1920}
-                        height={1080}
-                        src="/EveryCupImg.png"
-                        alt="Our Story"
-                        className="w-fit"
-                    />
+                <div className="flex flex-col lg:flex-row items-center justify-between">
+                    <p className="text-[18px] md:text-[30px]  xl:text-[40px] text-text-color  md:w-[49%]">
+                        We believe coffee is more than just a drink — it&apos;s
+                        a quiet moment shared, a connection made. Here, between
+                        two cups, stories unfold and warmth takes shape.!
+                    </p>
+
+                    <div className="mt-5 lg:mt-0">
+                        <Image
+                            width={1920}
+                            height={1080}
+                            src="/DSC07029.webp"
+                            alt="Our Story"
+                            className="w-fit md:w-[500px] lg:w-[700px] lg:h-[400px] rounded-xl"
+                        />
+                    </div>
                 </div>
             </div>
         </div>

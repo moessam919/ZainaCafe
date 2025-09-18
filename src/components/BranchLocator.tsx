@@ -1,10 +1,9 @@
-// BranchLocator.tsx
 "use client";
 
 import React, { useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import { branches, Branch } from "../lib/branches";
-import { Clock, MapPin, Phone } from "lucide-react";
+import { Clock, MapPin, Phone, Radar } from "lucide-react";
 
 // Dynamically import the map component with SSR disabled
 const DynamicMap = dynamic(() => import("./MapComponent"), {
@@ -229,6 +228,10 @@ export default function BranchLocator() {
                             Locate me <MapPin />
                         </button>
 
+                        {error && (
+                            <p className="text-sm text-red-600 mb-2">{error}</p>
+                        )}
+
                         {filteredBranches.slice(0, 5).map((b) => (
                             <div
                                 key={b.id}
@@ -268,9 +271,12 @@ export default function BranchLocator() {
                 <div className="md:hidden w-full bg-white border-b shadow p-3 z-50">
                     <button
                         onClick={() => setDrawerOpen(true)}
-                        className="w-full bg-amber-600 text-white py-3 rounded-lg font-medium"
+                        className="w-full bg-amber-600 text-white py-3 rounded-lg font-medium flex items-center gap-2 justify-center"
                     >
-                        ☰ Nearest branches
+                        Nearest branches{" "}
+                        <span className="pt-1">
+                            <Radar size={18} />
+                        </span>
                     </button>
                 </div>
 

@@ -73,6 +73,9 @@ const MapComponent: React.FC<MapComponentProps> = ({
 
     return (
         <MapContainer
+            key={`${selectedBranch?.id ?? "default"}-${
+                userPos ? "user" : "nouser"
+            }`}
             center={[defaultCenter.lat, defaultCenter.lng]}
             zoom={6}
             style={{ width: "100%", height: "100%", zIndex: 0 }}

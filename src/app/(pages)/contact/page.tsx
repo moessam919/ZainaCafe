@@ -2,6 +2,7 @@ import React from "react";
 
 import { Instagram, Facebook, Twitter } from "lucide-react";
 import BranchLocator from "@/components/BranchLocator";
+import Image from "next/image";
 
 const page = () => {
     return (
@@ -46,19 +47,35 @@ const page = () => {
                     </div>
                     <div>
                         <p className="font-medium text-text-color">Phone</p>
-                        <p className="text-lg mb-2 ">
-                            <a href={`tel:${"+971 4 389 0360"}`}>
-                                <span className="font-semibold">
-                                    UAE Number:
-                                </span>{" "}
-                                +971 4 389 0360
+                        <p className="text-lg mb-2 w-fit">
+                            <a
+                                href={`tel:${"+971 4 389 0360"}`}
+                                className="flex gap-1"
+                            >
+                                <Image
+                                    src="/united-arab-emirates.png"
+                                    alt="phone"
+                                    width={20}
+                                    height={20}
+                                    className="w-6"
+                                />
+                                <span className="font-semibold">UAE:</span> +971
+                                4 389 0360
                             </a>
                         </p>
-                        <p className="text-lg">
-                            <a href={`tel:${"+971 4 389 0360"}`}>
-                                <span className="font-semibold">
-                                    KSA Number:{" "}
-                                </span>{" "}
+                        <p className="text-lg w-fit">
+                            <a
+                                href={`tel:${"+971 4 389 0360"}`}
+                                className="flex gap-1"
+                            >
+                                <Image
+                                    src="/saudi-arabia.png"
+                                    alt="phone"
+                                    width={20}
+                                    height={20}
+                                    className="w-6"
+                                />
+                                <span className="font-semibold">KSA: </span>{" "}
                                 +966 50 051 8553
                             </a>
                         </p>
