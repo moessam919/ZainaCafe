@@ -9,7 +9,6 @@ interface Testimonial {
     title: string;
     content: string;
     author: string;
-    position: string;
 }
 
 // StarRating component (using your custom component)
@@ -75,36 +74,24 @@ const TestimonialSlider: React.FC = () => {
             rating: 5,
             title: "Amazing Experience",
             content:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam repellat voluptate vel unde cupiditate. Dolores beatae eum hic nisi dolor veniam ut repudiandae, non voluptas molestias eius quas doloremque iure.",
-            author: "John Doe",
-            position: "CEO, Company Inc.",
+                "The coffee shop is super. The latte was amazing. The french club sandwish is amazing. The baristas are friendly and welcoming.",
+            author: "Ahmed AL Saadawi",
         },
         {
             id: 2,
-            rating: 4,
+            rating: 5,
             title: "Outstanding Service",
             content:
-                "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            author: "Jane Smith",
-            position: "Marketing Director",
+                "The staff there are more then amazing, also the coffee and the place is nice, I recommends this place.",
+            author: "Bader Awad",
         },
         {
             id: 3,
             rating: 5,
             title: "Highly Recommended",
             content:
-                "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.",
-            author: "Mike Johnson",
-            position: "Product Manager",
-        },
-        {
-            id: 4,
-            rating: 4,
-            title: "Professional Quality",
-            content:
-                "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate.",
-            author: "Sarah Wilson",
-            position: "Creative Director",
+                "Zaina Cafe near Saudi German Hospital is hands-down one of the best Ajman cafes! The ambiance is elegant yet cozy, perfect for relaxing or catching up with friends. Service is top-notch—staff are friendly, attentive, and fast. Whether you're in the mood for specialty coffee or a light bite, this place delivers. Highly recommended for anyone searching for a quality cafe experience in Ajman!”",
+            author: "Dr. Pawar",
         },
     ];
 
@@ -188,9 +175,6 @@ const TestimonialSlider: React.FC = () => {
                     >
                         <p className="text-lg font-semibold text-gray-800">
                             {currentTestimonial.author}
-                        </p>
-                        <p className="text-sm text-gray-600 mt-1">
-                            {currentTestimonial.position}
                         </p>
                     </div>
                 </div>
