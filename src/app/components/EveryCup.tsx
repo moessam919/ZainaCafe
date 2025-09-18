@@ -32,7 +32,7 @@ const EveryCup = () => {
             </div>
 
             <div className="bg-[#f1f2f2] px-4 sm:px-8 md:px-16 lg:px-24 py-10 mt-8 md:mt-4 flex items-center relative w-full">
-                <div className="absolute top-[-5%] sm:-top-5 right-[20%] lg:top-[-6%] xl:-top-7 lg:right-[10%] 2xl:-top-9">
+                <div className="absolute top-[-4.5%] sm:-top-5 right-[20%] lg:top-[-6%] xl:-top-7 lg:right-[10%] 2xl:-top-9">
                     <Image
                         width={1920}
                         height={1080}
@@ -41,7 +41,7 @@ const EveryCup = () => {
                         className="w-[260px] md:w-[260px] lg:w-[400px] xl:w-90 2xl:w-[30rem]"
                     />
                 </div>
-                <div className="absolute bottom-[-6%] right-[20%] lg:bottom-[-8%] xl:-bottom-9 lg:right-[10%]  2xl:-bottom-11">
+                <div className="absolute bottom-[-5.5%] right-[20%] lg:bottom-[-8%] xl:-bottom-9 lg:right-[10%]  2xl:-bottom-11">
                     <Image
                         width={1920}
                         height={1080}
