@@ -2,8 +2,9 @@
 
 import React, { useMemo, useState } from "react";
 import dynamic from "next/dynamic";
-import { branches, Branch } from "../lib/branches";
-import { Clock, MapPin, Phone, Radar } from "lucide-react";
+import { branches, Branch, countries } from "../lib/branches";
+import { Clock, MapPin, Phone, Radar, ChevronDown, Globe } from "lucide-react";
+import Image from "next/image";
 
 // Dynamically import the map component with SSR disabled
 const DynamicMap = dynamic(() => import("./MapComponent"), {
@@ -53,6 +54,11 @@ export default function BranchLocator() {
     const [error, setError] = useState<string | null>(null);
     const [isLocating, setIsLocating] = useState<boolean>(false);
     const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
+    const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
+    const [countryDropdownOpen, setCountryDropdownOpen] =
+        useState<boolean>(false);
+    const [mobileCountryDropdownOpen, setMobileCountryDropdownOpen] =
+        useState<boolean>(false);
 
     // Locate user
     const handleLocate = () => {
@@ -102,15 +108,46 @@ export default function BranchLocator() {
         setDrawerOpen(false);
     };
 
+    const handleCountrySelect = (countryId: string | null) => {
+        setSelectedCountry(countryId);
+        setCountryDropdownOpen(false);
+        setMobileCountryDropdownOpen(false);
+
+        // Reset selected branch when changing country
+        setSelectedBranch(null);
+    };
+
+    const filteredByCountry = useMemo(() => {
+        if (!selectedCountry) return sortedBranches;
+        return sortedBranches.filter((b) => b.country === selectedCountry);
+    }, [sortedBranches, selectedCountry]);
+
     const filteredBranches = useMemo(
         () =>
-            sortedBranches.filter(
+            filteredByCountry.filter(
                 (b) =>
                     b.name.toLowerCase().includes(search.toLowerCase()) ||
                     b.city.toLowerCase().includes(search.toLowerCase())
             ),
-        [sortedBranches, search]
+        [filteredByCountry, search]
     );
+
+    const hasCountryBranches = useMemo(() => {
+        if (!selectedCountry) return true;
+        return branches.some((b) => b.country === selectedCountry);
+    }, [selectedCountry]);
+
+    const getSelectedCountryName = () => {
+        if (!selectedCountry) return "All Countries";
+        const country = countries.find((c) => c.id === selectedCountry);
+        return country ? country.name : "All Countries";
+    };
+
+    const getSelectedCountryIcon = () => {
+        if (!selectedCountry) return null;
+        const country = countries.find((c) => c.id === selectedCountry);
+        return country ? country.icon : null;
+    };
 
     return (
         <div className="min-h-[500px] md:min-h-[400px] flex bg-gray-50 relative">
@@ -120,6 +157,72 @@ export default function BranchLocator() {
                     <p className="text-sm text-gray-500">
                         Find your nearest branch or search manually
                     </p>
+                </div>
+
+                {/* Country Filter Dropdown - Desktop */}
+                <div className="mb-3 relative">
+                    <button
+                        onClick={() =>
+                            setCountryDropdownOpen(!countryDropdownOpen)
+                        }
+                        className="w-full p-3 border rounded-xl flex justify-between items-center bg-white hover:bg-gray-50 transition-colors"
+                    >
+                        <div className="flex items-center gap-2">
+                            {getSelectedCountryIcon() && (
+                                <div className="w-6 h-6 relative overflow-hidden rounded-full">
+                                    <Image
+                                        src={getSelectedCountryIcon() || ""}
+                                        alt={getSelectedCountryName()}
+                                        width={24}
+                                        height={24}
+                                        className="object-cover"
+                                    />
+                                </div>
+                            )}
+                            {!getSelectedCountryIcon() && (
+                                <Globe size={20} className="text-gray-500" />
+                            )}
+                            <span>{getSelectedCountryName()}</span>
+                        </div>
+                        <ChevronDown
+                            size={18}
+                            className={`text-gray-500 transition-transform ${
+                                countryDropdownOpen ? "rotate-180" : ""
+                            }`}
+                        />
+                    </button>
+
+                    {countryDropdownOpen && (
+                        <div className="absolute z-10 mt-1 w-full bg-white border rounded-xl shadow-lg py-2 animate-in fade-in slide-in-from-top-5">
+                            <button
+                                onClick={() => handleCountrySelect(null)}
+                                className="w-full px-4 py-2 text-left hover:bg-gray-50 flex items-center gap-2"
+                            >
+                                <Globe size={20} className="text-gray-500" />
+                                <span>All Countries</span>
+                            </button>
+                            {countries.map((country) => (
+                                <button
+                                    key={country.id}
+                                    onClick={() =>
+                                        handleCountrySelect(country.id)
+                                    }
+                                    className="w-full px-4 py-2 text-left hover:bg-gray-50 flex items-center gap-2"
+                                >
+                                    <div className="w-5 h-5 relative overflow-hidden">
+                                        <Image
+                                            src={country.icon}
+                                            alt={country.name}
+                                            width={20}
+                                            height={20}
+                                            className="object-cover"
+                                        />
+                                    </div>
+                                    <span>{country.name}</span>
+                                </button>
+                            ))}
+                        </div>
+                    )}
                 </div>
 
                 <div className="mb-3">
@@ -150,49 +253,78 @@ export default function BranchLocator() {
 
                 <div className="flex-1 overflow-auto max-h-[400px]">
                     <h3 className="text-lg font-semibold mb-3">
-                        Nearest branches ({filteredBranches.length})
+                        Branches ({filteredBranches.length})
                     </h3>
-                    <div className="space-y-3">
-                        {filteredBranches.map((b) => (
-                            <div
-                                key={b.id}
-                                onClick={() => selectBranch(b)}
-                                className={`p-4 rounded-xl border transition cursor-pointer ${
-                                    selectedBranch?.id === b.id
-                                        ? "bg-amber-50 border-amber-400 shadow"
-                                        : "bg-white border-gray-200 hover:shadow-sm"
-                                }`}
-                            >
-                                <div className="flex justify-between items-start">
-                                    <div>
-                                        <h4 className="font-semibold">
-                                            {b.name}
-                                        </h4>
-                                        <div className="text-sm text-gray-500">
-                                            {b.address ?? b.city}
+
+                    {selectedCountry && !hasCountryBranches && (
+                        <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
+                            <h4 className="font-semibold text-amber-800 mb-1">
+                                Coming Soon!
+                            </h4>
+                            <p className="text-sm text-amber-700">
+                                We&apos;re excited to announce that Zaina Cafe
+                                will be opening in {getSelectedCountryName()}{" "}
+                                soon. Stay tuned!
+                            </p>
+                        </div>
+                    )}
+
+                    {(hasCountryBranches || !selectedCountry) && (
+                        <div className="space-y-3">
+                            {filteredBranches.map((b) => (
+                                <div
+                                    key={b.id}
+                                    onClick={() => selectBranch(b)}
+                                    className={`p-4 rounded-xl border transition cursor-pointer ${
+                                        selectedBranch?.id === b.id
+                                            ? "bg-amber-50 border-amber-400 shadow"
+                                            : "bg-white border-gray-200 hover:shadow-sm"
+                                    }`}
+                                >
+                                    <div className="flex justify-between items-start">
+                                        <div>
+                                            <div className="flex items-center gap-2">
+                                                {b.flagIcon && (
+                                                    <div className="w-5 h-5 relative overflow-hidden rounded-full">
+                                                        <Image
+                                                            src={b.flagIcon}
+                                                            alt={b.country}
+                                                            width={20}
+                                                            height={20}
+                                                            className="object-cover"
+                                                        />
+                                                    </div>
+                                                )}
+                                                <h4 className="font-semibold">
+                                                    {b.name}
+                                                </h4>
+                                            </div>
+                                            <div className="text-sm text-gray-500">
+                                                {b.address ?? b.city}
+                                            </div>
                                         </div>
+                                        {b.distance !== undefined && (
+                                            <div className="text-amber-600 font-medium text-sm">
+                                                {b.distance!.toFixed(1)} km
+                                            </div>
+                                        )}
                                     </div>
-                                    {b.distance !== undefined && (
-                                        <div className="text-amber-600 font-medium text-sm">
-                                            {b.distance!.toFixed(1)} km
-                                        </div>
-                                    )}
+                                    <div className="mt-2 flex items-center gap-3 text-sm text-gray-600">
+                                        {b.hours && (
+                                            <div className="flex gap-1">
+                                                <Clock size={20} /> {b.hours}
+                                            </div>
+                                        )}
+                                        {b.phone && (
+                                            <div className="flex gap-1">
+                                                <Phone size={20} /> {b.phone}
+                                            </div>
+                                        )}
+                                    </div>
                                 </div>
-                                <div className="mt-2 flex items-center gap-3 text-sm text-gray-600">
-                                    {b.hours && (
-                                        <div className="flex gap-1">
-                                            <Clock size={20} /> {b.hours}
-                                        </div>
-                                    )}
-                                    {b.phone && (
-                                        <div className="flex gap-1">
-                                            <Phone size={20} /> {b.phone}
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
             </aside>
 
@@ -205,12 +337,91 @@ export default function BranchLocator() {
                     />
                     <div className="relative bg-white rounded-t-2xl p-4 max-h-[70vh] overflow-y-auto shadow-lg transform translate-y-0 transition-transform duration-300 animate-in slide-in-from-bottom">
                         <div className="flex justify-between items-center mb-3">
-                            <h3 className="text-lg font-semibold">
-                                Nearest branches
-                            </h3>
+                            <h3 className="text-lg font-semibold">Branches</h3>
                             <button onClick={() => setDrawerOpen(false)}>
                                 ✖
                             </button>
+                        </div>
+
+                        {/* Country Filter Dropdown - Mobile */}
+                        <div className="mb-3 relative">
+                            <button
+                                onClick={() =>
+                                    setMobileCountryDropdownOpen(
+                                        !mobileCountryDropdownOpen
+                                    )
+                                }
+                                className="w-full p-3 border rounded-xl flex justify-between items-center bg-white"
+                            >
+                                <div className="flex items-center gap-2">
+                                    {getSelectedCountryIcon() && (
+                                        <div className="w-6 h-6 relative overflow-hidden rounded-full">
+                                            <Image
+                                                src={
+                                                    getSelectedCountryIcon() ||
+                                                    ""
+                                                }
+                                                alt={getSelectedCountryName()}
+                                                width={24}
+                                                height={24}
+                                                className="object-cover"
+                                            />
+                                        </div>
+                                    )}
+                                    {!getSelectedCountryIcon() && (
+                                        <Globe
+                                            size={20}
+                                            className="text-gray-500"
+                                        />
+                                    )}
+                                    <span>{getSelectedCountryName()}</span>
+                                </div>
+                                <ChevronDown
+                                    size={18}
+                                    className={`text-gray-500 transition-transform ${
+                                        mobileCountryDropdownOpen
+                                            ? "rotate-180"
+                                            : ""
+                                    }`}
+                                />
+                            </button>
+
+                            {mobileCountryDropdownOpen && (
+                                <div className="absolute z-10 mt-1 w-full bg-white border rounded-xl shadow-lg py-2 animate-in fade-in slide-in-from-top-5">
+                                    <button
+                                        onClick={() =>
+                                            handleCountrySelect(null)
+                                        }
+                                        className="w-full px-4 py-2 text-left hover:bg-gray-50 flex items-center gap-2"
+                                    >
+                                        <Globe
+                                            size={20}
+                                            className="text-gray-500"
+                                        />
+                                        <span>All Countries</span>
+                                    </button>
+                                    {countries.map((country) => (
+                                        <button
+                                            key={country.id}
+                                            onClick={() =>
+                                                handleCountrySelect(country.id)
+                                            }
+                                            className="w-full px-4 py-2 text-left hover:bg-gray-50 flex items-center gap-2"
+                                        >
+                                            <div className="w-5 h-5 relative overflow-hidden">
+                                                <Image
+                                                    src={country.icon}
+                                                    alt={country.name}
+                                                    width={20}
+                                                    height={20}
+                                                    className=""
+                                                />
+                                            </div>
+                                            <span>{country.name}</span>
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
                         </div>
 
                         <input
@@ -232,36 +443,63 @@ export default function BranchLocator() {
                             <p className="text-sm text-red-600 mb-2">{error}</p>
                         )}
 
-                        {filteredBranches.slice(0, 5).map((b) => (
-                            <div
-                                key={b.id}
-                                onClick={() => {
-                                    selectBranch(b);
-                                    setDrawerOpen(false);
-                                }}
-                                className={`p-3 border rounded mb-3 cursor-pointer ${
-                                    selectedBranch?.id === b.id
-                                        ? "bg-amber-50 border-amber-400"
-                                        : "bg-white"
-                                }`}
-                            >
-                                <div className="flex justify-between">
-                                    <div>
-                                        <div className="font-semibold">
-                                            {b.name}
-                                        </div>
-                                        <div className="text-sm text-gray-500">
-                                            {b.city}
-                                        </div>
-                                    </div>
-                                    {b.distance !== undefined && (
-                                        <div className="text-amber-600">
-                                            {b.distance!.toFixed(1)} km
-                                        </div>
-                                    )}
-                                </div>
+                        {selectedCountry && !hasCountryBranches && (
+                            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center mb-3">
+                                <h4 className="font-semibold text-amber-800 mb-1">
+                                    Coming Soon!
+                                </h4>
+                                <p className="text-sm text-amber-700">
+                                    We&apos;re excited to announce that Zaina
+                                    Cafe will be opening in{" "}
+                                    {getSelectedCountryName()} soon. Stay tuned!
+                                </p>
                             </div>
-                        ))}
+                        )}
+
+                        {(hasCountryBranches || !selectedCountry) &&
+                            filteredBranches.slice(0, 5).map((b) => (
+                                <div
+                                    key={b.id}
+                                    onClick={() => {
+                                        selectBranch(b);
+                                        setDrawerOpen(false);
+                                    }}
+                                    className={`p-3 border rounded mb-3 cursor-pointer ${
+                                        selectedBranch?.id === b.id
+                                            ? "bg-amber-50 border-amber-400"
+                                            : "bg-white"
+                                    }`}
+                                >
+                                    <div className="flex justify-between">
+                                        <div>
+                                            <div className="flex items-center gap-2">
+                                                {b.flagIcon && (
+                                                    <div className="w-5 h-5 relative overflow-hidden">
+                                                        <Image
+                                                            src={b.flagIcon}
+                                                            alt={b.country}
+                                                            width={20}
+                                                            height={20}
+                                                            className="object-cover"
+                                                        />
+                                                    </div>
+                                                )}
+                                                <div className="font-semibold">
+                                                    {b.name}
+                                                </div>
+                                            </div>
+                                            <div className="text-sm text-gray-500">
+                                                {b.city}
+                                            </div>
+                                        </div>
+                                        {b.distance !== undefined && (
+                                            <div className="text-amber-600">
+                                                {b.distance!.toFixed(1)} km
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            ))}
                     </div>
                 </div>
             )}
@@ -274,7 +512,7 @@ export default function BranchLocator() {
                         className="w-full bg-amber-600 text-white py-3 rounded-lg font-medium flex items-center gap-2 justify-center"
                     >
                         Nearest branches{" "}
-                        <span className="pt-1">
+                        <span>
                             <Radar size={18} />
                         </span>
                     </button>

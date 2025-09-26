@@ -57,7 +57,7 @@ const page = () => {
                                     alt="phone"
                                     width={20}
                                     height={20}
-                                    className="w-6"
+                                    className="w-6 h-6"
                                 />
                                 <span className="font-semibold">UAE:</span> +971
                                 4 389 0360
@@ -69,11 +69,11 @@ const page = () => {
                                 className="flex gap-1"
                             >
                                 <Image
-                                    src="/saudi-arabia.png"
+                                    src="/saudi-arabia-icon.png"
                                     alt="phone"
                                     width={20}
                                     height={20}
-                                    className="w-6"
+                                    className="w-6 h-6"
                                 />
                                 <span className="font-semibold">KSA: </span>{" "}
                                 +966 50 051 8553
