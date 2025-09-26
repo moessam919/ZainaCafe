@@ -1,7 +1,6 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { Button } from "@/components/ui/button";
 import {
     Sheet,
     SheetClose,
@@ -90,10 +89,10 @@ const Header = () => {
                     <div className="md:hidden">
                         <Sheet>
                             <SheetTrigger asChild>
-                                <Button variant="ghost" size="icon">
-                                    <Menu className="w-6 h-6" />
+                                <div className="w-14 h-14 flex items-center justify-center cursor-pointer">
+                                    <Menu className="w-7 h-7" />
                                     <span className="sr-only">Open menu</span>
-                                </Button>
+                                </div>
                             </SheetTrigger>
                             <SheetContent
                                 side="right"
