@@ -29,23 +29,6 @@ const page = () => {
                 </h4>
                 <div className="grid md:grid-cols-2 gap-6 border-t pt-6 text-sm text-text-color">
                     <div>
-                        <p className="font-medium text-text-color">Address</p>
-                        <p className="text-lg w-[80%]">
-                            <span className="font-semibold">UAE Branches:</span>{" "}
-                            Dubai , Ajman
-                        </p>
-                        <p className="text-lg w-[80%]">
-                            <span className="font-semibold">KSA Branches:</span>{" "}
-                            Riyadh , Jeddah
-                        </p>
-                    </div>
-                    <div>
-                        <p className="font-medium text-text-color">
-                            Opening Hours
-                        </p>
-                        <p className="text-lg">8 AM - 9 PM</p>
-                    </div>
-                    <div>
                         <p className="font-medium text-text-color">Phone</p>
                         <p className="text-lg mb-2 w-fit">
                             <a

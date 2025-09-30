@@ -23,7 +23,7 @@ const EveryCup = () => {
                 />
             </div>
             <div className="px-4 sm:px-8 md:px-16 lg:px-24 mt-10 lg:mt-20">
-                <h1 className="text-[30px] md:text-[40px] lg:text-[80px] xl:text-[120px] text-red-color">
+                <h1 className="text-[30px] md:text-[40px] lg:text-[80px] xl:text-[120px] text-[#085269]">
                     Every cup
                 </h1>
                 <p className="text-[18px] md:text-[20px] lg:text-[62px] xl:text-[80px] text-text-color font-semibold">
@@ -31,7 +31,7 @@ const EveryCup = () => {
                 </p>
             </div>
 
-            <div className="bg-[#f1f2f2] px-4 sm:px-8 md:px-16 lg:px-24 py-10 mt-8 md:mt-4 flex items-center relative w-full">
+            <div className="bg-[#085269] px-4 sm:px-8 md:px-16 lg:px-24 py-10 mt-8 md:mt-4 flex items-center relative w-full">
                 <div className="absolute top-[-4.5%] sm:-top-5 right-[20%] lg:top-[-6%] xl:-top-7 lg:right-[10%] 2xl:-top-9">
                     <Image
                         width={1920}
@@ -52,7 +52,7 @@ const EveryCup = () => {
                 </div>
 
                 <div className="flex flex-col lg:flex-row items-center justify-between">
-                    <p className="text-[18px] md:text-[30px]  xl:text-[40px] text-text-color  md:w-[49%]">
+                    <p className="text-[18px] md:text-[30px]  xl:text-[40px] text-white  md:w-[49%] ">
                         We believe coffee is more than just a drink — it&apos;s
                         a quiet moment shared, a connection made. Here, between
                         two cups, stories unfold and warmth takes shape.!

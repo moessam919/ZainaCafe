@@ -26,7 +26,7 @@ const OurMenu = () => {
     return (
         <div className="px-4 sm:px-8 md:px-16 lg:px-24 lg:mt-20 mt-20">
             <div className="flex flex-col justify-center items-center mb-4 ">
-                <h1 className="text-orange-color text-[60px] md:text-7xl lg:text-text-7xl xl:text-[80px] font-bold xl:mb-6">
+                <h1 className="text-[#df7927] text-[60px] md:text-7xl lg:text-text-7xl xl:text-[80px] font-bold xl:mb-6">
                     Our Menu
                 </h1>
                 <h3 className="text-text-color text-xl md:text-4xl lg:text-5xl xl:text-[50px] text-center">
@@ -51,7 +51,7 @@ const OurMenu = () => {
                                         height={1080}
                                         src={product.image}
                                         alt={product.name}
-                                        className="w-[100%] h-[100%] object-cover rounded-xs"
+                                        className="w-[100%] h-[100%] object-cover rounded-md"
                                     />
                                 </div>
                             </div>
@@ -59,14 +59,14 @@ const OurMenu = () => {
                             {/* Product Info */}
                             <div className="p-4 flex justify-between">
                                 <div>
-                                    <h3 className="text-lg font-semibold text-text-color ">
+                                    <h3 className="text-3xl font-bold text-[#df7927] ">
                                         {product.name}
                                     </h3>
-                                    {product.disc && (
+                                    {/* {product.disc && (
                                         <p className="text-sm text-gray-600 mt-1">
                                             {product.disc}
                                         </p>
-                                    )}
+                                    )} */}
                                 </div>
                             </div>
                         </div>
@@ -75,7 +75,7 @@ const OurMenu = () => {
             </div>
             <div className="flex flex-col justify-center items-center mt-8">
                 <a href="/menu">
-                    <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-3xl md:text-5xl font-medium transition-colors duration-200 flex gap-2 cursor-pointer">
+                    <button className="bg-[#df7927] hover:bg-[#df6b27] text-white px-4 py-2 rounded-md text-3xl md:text-5xl font-medium transition-colors duration-200 flex gap-2 cursor-pointer">
                         Full Menu
                         <ChevronRight className="size-10 md:size-14" />
                     </button>

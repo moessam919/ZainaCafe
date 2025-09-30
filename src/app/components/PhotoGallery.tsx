@@ -29,7 +29,7 @@ const PhotoGallery = () => {
                         </div>
 
                         {/* Tall image */}
-                        <div className="overflow-hidden border-[30px] border-[#f2f2f2] rounded-lg shadow-md">
+                        <div className="overflow-hidden border-[30px] border-[#f2f2f2] hover:border-orange-400 transition-colors duration-300 rounded-lg shadow-md">
                             <Image
                                 width={1920}
                                 height={1080}
@@ -40,7 +40,7 @@ const PhotoGallery = () => {
                         </div>
 
                         {/* Small image */}
-                        <div className="overflow-hidden border-[30px] border-[#f2f2f2] rounded-lg shadow-md">
+                        <div className="overflow-hidden border-[30px] border-[#f2f2f2] hover:border-[#162951] transition-colors duration-300 rounded-lg shadow-md">
                             <Image
                                 width={1920}
                                 height={1080}
@@ -53,7 +53,7 @@ const PhotoGallery = () => {
 
                     {/* Middle column */}
                     <div className="space-y-6">
-                        <div className="overflow-hidden border-[30px] border-[#f2f2f2] rounded-lg shadow-md">
+                        <div className="overflow-hidden border-[30px] border-[#f2f2f2] hover:border-[#162951] transition-colors duration-300 rounded-lg shadow-md">
                             <Image
                                 width={1920}
                                 height={1080}
@@ -63,7 +63,7 @@ const PhotoGallery = () => {
                             />
                         </div>
 
-                        <div className="overflow-hidden border-[30px] border-[#f2f2f2] rounded-lg shadow-md">
+                        <div className="overflow-hidden border-[30px] border-[#f2f2f2] hover:border-orange-400 transition-colors duration-300 rounded-lg shadow-md">
                             <Image
                                 width={1920}
                                 height={1080}
@@ -73,7 +73,7 @@ const PhotoGallery = () => {
                             />
                         </div>
 
-                        <div className="overflow-hidden border-[30px] border-[#f2f2f2] rounded-lg shadow-md">
+                        <div className="overflow-hidden border-[30px] border-[#f2f2f2] hover:border-[#cf3126] transition-colors duration-300 rounded-lg shadow-md">
                             <Image
                                 width={1920}
                                 height={1080}
@@ -88,7 +88,7 @@ const PhotoGallery = () => {
                     <div className="space-y-6">
                         <div className="h-24 hidden lg:flex"></div>
 
-                        <div className="overflow-hidden border-[30px] border-[#f2f2f2] rounded-lg shadow-md">
+                        <div className="overflow-hidden border-[30px] border-[#f2f2f2] hover:border-[#cf3126] transition-colors duration-300 rounded-lg shadow-md">
                             <Image
                                 width={1920}
                                 height={1080}
@@ -98,7 +98,7 @@ const PhotoGallery = () => {
                             />
                         </div>
 
-                        <div className="overflow-hidden border-[30px] border-[#f2f2f2] rounded-lg shadow-md">
+                        <div className="overflow-hidden border-[30px] border-[#f2f2f2] hover:border-[#162951] transition-colors duration-300 rounded-lg shadow-md">
                             <Image
                                 width={1920}
                                 height={1080}

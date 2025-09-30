@@ -421,7 +421,7 @@ const Page = () => {
                         {/* Three Cards in One Row */}
                         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8">
                             {/* Carob Chip Cookie Card */}
-                            <div className="bg-gray-200 rounded-2xl overflow-hidden shadow-lg flex flex-col">
+                            <div className="bg-[#0f5169] rounded-2xl overflow-hidden shadow-lg flex flex-col">
                                 {/* Top Image */}
                                 <div className="h-72">
                                     <Image
@@ -435,10 +435,10 @@ const Page = () => {
 
                                 {/* Bottom Text */}
                                 <div className="p-6  relative overflow-auto flex-1">
-                                    <h2 className=" text-2xl font-bold mb-4">
+                                    <h2 className=" text-2xl font-bold mb-4 text-white">
                                         Carob Chip
                                     </h2>
-                                    <p className="leading-relaxed text-base">
+                                    <p className="leading-relaxed text-base text-white">
                                         Our signature chocolate chip cookie with
                                         a hint of sea salt and premium Belgian
                                         chocolate chips. Baked fresh daily to
@@ -449,7 +449,7 @@ const Page = () => {
                             </div>
 
                             {/* Double chocolate Chip Card */}
-                            <div className="bg-gray-200 rounded-2xl overflow-hidden shadow-lg flex flex-col">
+                            <div className="bg-[#cf3126] rounded-2xl overflow-hidden shadow-lg flex flex-col">
                                 {/* Top Image */}
                                 <div className="h-72">
                                     <Image
@@ -463,10 +463,10 @@ const Page = () => {
 
                                 {/* Bottom Text */}
                                 <div className="p-6  relative overflow-auto flex-1">
-                                    <h2 className="text-2xl font-bold mb-4">
+                                    <h2 className="text-2xl font-bold mb-4 text-white">
                                         Double chocolate Chip
                                     </h2>
-                                    <p className="leading-relaxed text-base">
+                                    <p className="leading-relaxed text-base text-white">
                                         Authentic Middle Eastern shortbread
                                         cookies filled with dates, pistachios,
                                         or walnuts. Made following traditional
@@ -478,7 +478,7 @@ const Page = () => {
                             </div>
 
                             {/* Chocolate Chip Cookies Card */}
-                            <div className="bg-gray-200 rounded-2xl overflow-hidden shadow-lg flex flex-col">
+                            <div className="bg-[#172951] rounded-2xl overflow-hidden shadow-lg flex flex-col">
                                 {/* Top Image */}
                                 <div className="h-72">
                                     <Image
@@ -492,21 +492,21 @@ const Page = () => {
 
                                 {/* Bottom Text */}
                                 <div className="p-6  relative overflow-auto flex-1">
-                                    <h2 className=" text-2xl font-bold mb-4">
+                                    <h2 className=" text-2xl font-bold mb-4 text-white">
                                         Chocolate Chip
                                     </h2>
-                                    <p className="leading-relaxed text-base">
+                                    <p className="leading-relaxed text-base text-white">
                                         Limited-time seasonal flavors that
                                         celebrate the best of each season. From
                                         spiced gingerbread in winter to
                                         refreshing lemon in summer, our rotating
-                                        collection ensures there&aops;s always
+                                        collection ensures there&apos;s always
                                         something new to discover.
                                     </p>
                                 </div>
                             </div>
                             {/* Miso white chocolate Chip Cookies Card */}
-                            <div className="bg-gray-200 rounded-2xl overflow-hidden shadow-lg flex flex-col">
+                            <div className="bg-[#df7927] rounded-2xl overflow-hidden shadow-lg flex flex-col">
                                 {/* Top Image */}
                                 <div className="h-72">
                                     <Image
@@ -520,10 +520,10 @@ const Page = () => {
 
                                 {/* Bottom Text */}
                                 <div className="p-6  relative overflow-auto flex-1">
-                                    <h2 className=" text-2xl font-bold mb-4">
+                                    <h2 className=" text-2xl font-bold mb-4 text-white">
                                         Miso white chocolate Chip
                                     </h2>
-                                    <p className="leading-relaxed text-base">
+                                    <p className="leading-relaxed text-base text-white">
                                         Limited-time seasonal flavors that
                                         celebrate the best of each season. From
                                         spiced gingerbread in winter to
