@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const HomePanner = () => {
+const OldHomeBanner = () => {
     return (
         <div className="relative">
             <div className="absolute -top-4 sm:-top-5 left-1/2 transform -translate-x-1/2 md:-top-7 lg:-top-8 xl:-top-7 2xl:-top-9 lg:-translate-x-1/7 xl:translate-x-36 lg:right-[10%]">
@@ -112,4 +112,4 @@ const HomePanner = () => {
     );
 };
 
-export default HomePanner;
+export default OldHomeBanner;

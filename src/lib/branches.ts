@@ -61,7 +61,7 @@ export const branches: Branch[] = [
         address:
             "6785 حي, As Sahafah, 2616 King Fahd Branch Rd, Riyadh 13321, Saudi Arabia",
         phone: "+966500518553",
-        hours: "8:00 AM - 9:00 PM",
+        hours: "8:00 AM - 11:00 PM",
         rating: 4.7,
         flagIcon: "/saudi-arabia-icon.png",
     },
@@ -75,7 +75,7 @@ export const branches: Branch[] = [
         address:
             "4 Batterjee Road, Al-Zahra District, Jeddah 23521, Saudi Arabia",
         phone: "+966500518553",
-        hours: "8:00 AM - 9:00 PM",
+        hours: "8:00 AM - 11:00 PM",
         rating: 4.5,
         flagIcon: "/saudi-arabia-icon.png",
     },

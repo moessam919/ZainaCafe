@@ -1,28 +1,28 @@
-import ValueCard from "@/components/ui/ValueCard";
+import { ValueCard } from "@/components/ui/ValueCard";
 import { Smile, Heart, Palette, Award } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 const values = [
     {
-        icon: <Smile />,
+        icon: <Smile size={36} strokeWidth={1.5} />,
         title: "Warm Hospitality",
         description:
             "We believe that great coffee should come with a genuine smile. Every guest is welcomed like family, and every visit is a chance to make someone feel at home.",
     },
     {
-        icon: <Heart />,
+        icon: <Heart size={36} strokeWidth={1.5} />,
         title: "Authenticity",
         description:
             "From the ingredients we choose to the spaces we design, we stay true to who we are. Our Saudi roots and personal story are reflected in every detail.",
     },
     {
-        icon: <Palette />,
+        icon: <Palette size={36} strokeWidth={1.5} />,
         title: "Creative Spirit",
         description:
             "We bring fresh energy to everything we do—from our matcha flavors to our merch. Zaina Café is a place where ideas come to life, fueled by passion and purpose.",
     },
     {
-        icon: <Award />,
+        icon: <Award size={36} strokeWidth={1.5} />,
         title: "Commitment to Quality",
         description:
             "Craftsmanship is at the core of our menu. We source premium beans, bake with care, and focus on delivering consistency, flavor, and excellence—every single time.",
@@ -106,9 +106,13 @@ const page = () => {
                     communities across the region.
                 </p>
 
-                <div className="grid lg:grid-cols-4 gap-6">
-                    {values.map((val) => (
-                        <ValueCard key={val.title} {...val} />
+                <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6">
+                    {values.map((val, index) => (
+                        <ValueCard
+                            key={val.title}
+                            {...val}
+                            colorIndex={index}
+                        />
                     ))}
                 </div>
             </div>

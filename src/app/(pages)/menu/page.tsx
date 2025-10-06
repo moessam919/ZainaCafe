@@ -20,39 +20,39 @@ const Page = () => {
     const coffeeImages = [
         {
             id: 1,
-            title: "Premium Arabica Beans",
+            title: "Emirati Coffee",
             type: "beans",
-            image: "/coffe1.jpg",
+            image: "/Emirati Coffee.jpg",
         },
         {
             id: 2,
-            title: "Ethiopian Single Origin",
+            title: "Lungo",
             type: "beans",
-            image: "/cap1.jpg",
+            image: "/Lungo .jpg",
         },
         {
             id: 3,
-            title: "Colombian Supreme",
+            title: "Colombia Decafenated",
             type: "beans",
-            image: "/coffe2.jpg",
+            image: "/Colombia Decafenated.jpg",
         },
         {
             id: 4,
-            title: "Espresso Capsules",
+            title: "Intenso",
             type: "capsules",
-            image: "/cap2.jpg",
+            image: "/Intenso.jpg",
         },
         {
             id: 5,
-            title: "Lungo Capsules",
+            title: "Turkish Coffee",
             type: "capsules",
-            image: "/coffe3.jpg",
+            image: "/Turkish Coffee.jpg",
         },
         {
             id: 6,
-            title: "Decaf Capsules",
+            title: "Roma",
             type: "capsules",
-            image: "/cap3.jpg",
+            image: "/Roma.jpg",
         },
     ];
 
