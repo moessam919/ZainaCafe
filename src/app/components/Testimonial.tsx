@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 // Type definitions
 interface Testimonial {
@@ -128,6 +129,21 @@ const TestimonialSlider: React.FC = () => {
 
     return (
         <div className="px-4 sm:px-8 md:px-16 lg:px-24 lg:mt-20 mt-20 bg-[#f1f2f2]">
+            {/* Google Reviews Header */}
+            <div className="flex flex-col items-center justify-center pt-8 ">
+                <Image
+                    src="/google-logo.webp"
+                    alt="Google Logo"
+                    width={200}
+                    height={50}
+                    className="object-contain"
+                    priority
+                />
+                <p className="text-[#6e7271] text-2xl font-bold -mt-1">
+                    Reviews
+                </p>
+            </div>
+
             <div className="py-10 flex justify-center items-center relative">
                 <div className="star flex flex-col justify-center items-center max-w-4xl w-full">
                     {/* Star Rating */}

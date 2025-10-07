@@ -9,7 +9,7 @@ const HomeBanner = () => {
                     src="/Zaina Cafe -  logo & look and feel.png"
                     alt="Zaina Cafe Heritage"
                     fill
-                    className="object-cover object-left lg:object-center"
+                    className="object-cover object-right lg:object-center"
                     priority
                     quality={100}
                 />
@@ -24,7 +24,7 @@ const HomeBanner = () => {
                     <div className=""></div>
 
                     {/* Right Side - Content - 2 columns */}
-                    <div className="lg:col-span-2 flex flex-col justify-center items-center lg:items-end text-center lg:text-right space-y-2 lg:space-y-0 lg:ml-auto">
+                    <div className="lg:col-span-2 flex flex-col justify-center items-center lg:items-end lg:text-right space-y-2 lg:space-y-0 lg:ml-auto">
                         {/* Avatar for Mobile/Tablet */}
                         <div className="lg:hidden mb-6">
                             <Image
@@ -39,7 +39,7 @@ const HomeBanner = () => {
                         {/* Heading */}
                         <div className="">
                             <h1
-                                className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-6xl 2xl:text-6xl text-white drop-shadow-md text-left w-fit border-b-3 font-semibold"
+                                className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-6xl 2xl:text-6xl text-white drop-shadow-md text-center w-full lg:text-left lg:w-fit border-b-3 font-semibold"
                                 style={{ fontFamily: "Bebas Neue, sans-serif" }}
                             >
                                 Welcome to
@@ -50,7 +50,7 @@ const HomeBanner = () => {
                         </div>
 
                         {/* Subheading */}
-                        <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-[2.6rem] xl:text-[4.3rem] 2xl:text-[5.6rem] font-semibold drop-shadow-md ">
+                        <h2 className="text-white text-right text-3xl sm:text-4xl md:text-5xl lg:text-[2.6rem] xl:text-[4.3rem] 2xl:text-[5.6rem] font-semibold drop-shadow-md ">
                             Your Daily Retreat!
                         </h2>
 
@@ -60,7 +60,7 @@ const HomeBanner = () => {
                                 href="/contact"
                                 className="inline-block mt-2 bg-[#f4a261] text-white text-xl sm:text-2xl lg:text-2xl xl:text-4xl font-bold px-10 sm:px-16 py-4 sm:py-5 rounded-2xl hover:bg-[#e76f51] hover:scale-105 transition-all duration-300 shadow-[0_8px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_12px_30px_rgba(231,111,81,0.4)]"
                             >
-                                Contact Us
+                                Find Us
                             </a>
                         </div>
                     </div>
