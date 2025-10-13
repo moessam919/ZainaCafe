@@ -35,20 +35,21 @@ const OurStory = () => {
                     Our Story
                 </h1>
                 <h3 className="text-text-color text-xl md:text-4xl lg:text-5xl xl:text-[50px] text-center">
-                    Feel The Taste Of The Best Tea Making
+                    Zaina Café is more than a coffee destination{" "}
                 </h3>
-                <h3 className="text-text-color text-2xl md:text-4xl lg:text-5xl xl:text-[50px] mt-[-10px] 2xl:mt-0">
+                {/* <h3 className="text-text-color text-2xl md:text-4xl lg:text-5xl xl:text-[50px] mt-[-10px] 2xl:mt-0">
                     Just In Our Tea House
-                </h3>
+                </h3> */}
             </div>
             <div className="flex justify-center items-center">
                 <div className="md:w-[80%] xl:w-full 2xl:w-[90%] bg-[#172951] px-10 py-10 rounded-4xl text-center relative">
                     <p className="text-white text-[18px] md:text-[20px] lg:text-[22px] xl:text-[40px] font-bold mb-4">
-                        Zaina Cafe — Conveniently located within Saudi German
-                        Hospital Dubai. We offer a wide selection of coffee,
-                        beverages, and light meals to refresh and energize you
-                        during your visit. Come experience our warm hospitality
-                        and delicious offerings.
+                        Zaina Café is a cultural experience. Rooted in Saudi
+                        heritage and guided by a modern, storytelling-driven
+                        identity, Zaina offers a unique space where quality
+                        coffee meets artistic soul. With branches across Saudi
+                        Arabia and the UAE, and more to come, Zaina Café is
+                        where tradition, warmth, and great coffee come together.
                     </p>
 
                     <div className="absolute left-1/2 bottom-0 transform -translate-x-1/2">

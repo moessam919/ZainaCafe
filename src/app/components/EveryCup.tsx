@@ -53,16 +53,17 @@ const EveryCup = () => {
 
                 <div className="flex flex-col lg:flex-row items-center justify-between">
                     <p className="text-[18px] md:text-[30px]  xl:text-[40px] text-white  md:w-[49%] ">
-                        We believe coffee is more than just a drink — it&apos;s
-                        a quiet moment shared, a connection made. Here, between
-                        two cups, stories unfold and warmth takes shape.!
+                        At Zaina Café, every cup reflects our roots — brewed
+                        with passion, inspired by Saudi heritage, and crafted to
+                        bring people together. <br /> It’s not just about
+                        coffee, it’s about moments that feel like home.
                     </p>
 
                     <div className="mt-5 lg:mt-0">
                         <Image
                             width={1920}
                             height={1080}
-                            src="/DSC07029.webp"
+                            src="/Ajman.jpg"
                             alt="Our Story"
                             className="w-fit md:w-[500px] lg:w-[700px] lg:h-[400px] rounded-xl"
                         />
