@@ -61,6 +61,7 @@ const Page = () => {
         {
             id: 1,
             title: "Classic Tote Bag",
+            dis: "Premium bags with Zaina's unique designs.",
             category: "bags",
             color: "Natural",
             image: "/totibag.jpg",
@@ -68,6 +69,8 @@ const Page = () => {
         {
             id: 4,
             title: "T-Shirt",
+            dis: "Quality basic t-shirts in black or white.",
+
             category: "shirts",
             color: "Heather Gray",
             image: "/T-shirt.jpg",
@@ -119,9 +122,8 @@ const Page = () => {
                             Signature Hot Beverages
                         </h2>
                         <p className="text-gray-600 text-lg max-w-2xl ">
-                            Warm your soul with our carefully crafted hot
-                            drinks, featuring premium ingredients and
-                            traditional brewing methods.
+                            Indulge in our signature hot beverages, <br />
+                            crafted to bring comfort and warmth with every sip.
                         </p>
                     </div>
 
@@ -145,12 +147,10 @@ const Page = () => {
                                     Zaina Latter (Saffron & Almond)
                                 </h2>
                                 <p className="text-white/90 mb-6 leading-relaxed text-xl">
-                                    A luxurious twist on tradition, the Zaina
-                                    Latte blends rich espresso with delicate
-                                    saffron and smooth almond, topped with
-                                    velvety cold foam. A harmonious balance of
-                                    warmth, aroma, and flavor — crafted to be
-                                    savored, available for a limited time.
+                                    A blend of saffron and almond for a smooth
+                                    rich drink that tastes like heritage in a
+                                    cup. Crafted with care, served with pride
+                                    only at Zaina Café.
                                 </p>
 
                                 <div className="absolute bottom-0 left-4 hidden md:block">
@@ -210,8 +210,8 @@ const Page = () => {
                             Refreshing Cold Beverages
                         </h2>
                         <p className="text-gray-600 text-lg max-w-2xl ">
-                            Cool down with our selection of iced beverages,
-                            perfect for any time of day.
+                            Refresh yourself with our iced drinks, ideal for
+                            every moment of the day.{" "}
                         </p>
                     </div>
 
@@ -260,10 +260,9 @@ const Page = () => {
                                     Blue Matcha
                                 </h2>
                                 <p className="text-white/90 mb-6 leading-relaxed text-xl">
-                                    Unique butterfly pea flower blend with
-                                    matcha, creating a stunning blue color
-                                    that&apos;s as Instagram-worthy as it is
-                                    delicious. A limited time specialty drink.
+                                    A smooth, lightly sweet, and earthy drink
+                                    with subtle floral notes — a gentle and
+                                    refreshing treat for any time of day.
                                 </p>
                                 <div className="absolute bottom-0 left-4 hidden md:block">
                                     <Image
@@ -298,8 +297,8 @@ const Page = () => {
                             Premium Coffee Collection
                         </h2>
                         <p className="text-gray-600 text-lg max-w-2xl">
-                            Take home the Zaina experience with our selection of
-                            premium coffee beans and convenient capsules.
+                            Enjoy Zaina Coffee at home with our premium beans
+                            and easy-to-use capsules.
                         </p>
                     </div>
 
@@ -408,12 +407,12 @@ const Page = () => {
                 <div className="container max-w-9xl mx-auto px-6">
                     <div className="mb-4">
                         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                            Artisan Cookies
+                            Zaina Cookies
                         </h2>
                         <p className="text-gray-600 text-lg max-w-2xl">
-                            Indulge in our freshly baked cookies and sweet
-                            treats, crafted daily with the finest ingredients
-                            for the perfect complement to your coffee.
+                            Artisan Zaina Cookies, available in multiple flavors
+                            and vegan options, ideal alongside a cup of Zaina
+                            Coffee.
                         </p>
                     </div>
 
@@ -436,14 +435,14 @@ const Page = () => {
                                 {/* Bottom Text */}
                                 <div className="p-6  relative overflow-auto flex-1">
                                     <h2 className=" text-2xl font-bold mb-4 text-white">
-                                        Carob Chip
+                                        Carob Chip (Vegan)
                                     </h2>
                                     <p className="leading-relaxed text-base text-white">
-                                        Our signature chocolate chip cookie with
-                                        a hint of sea salt and premium Belgian
-                                        chocolate chips. Baked fresh daily to
-                                        achieve the perfect balance of crispy
-                                        edges and soft, chewy center.
+                                        Our vegan Carob Cookie is naturally
+                                        sweet, mildly chocolatey flavor. Soft,
+                                        wholesome, and completely caffeine-free,
+                                        it’s a delightful treat at any time of
+                                        the day.
                                     </p>
                                 </div>
                             </div>
@@ -464,15 +463,14 @@ const Page = () => {
                                 {/* Bottom Text */}
                                 <div className="p-6  relative overflow-auto flex-1">
                                     <h2 className="text-2xl font-bold mb-4 text-white">
-                                        Double chocolate Chip
+                                        Double Chocolate Chip
                                     </h2>
                                     <p className="leading-relaxed text-base text-white">
-                                        Authentic Middle Eastern shortbread
-                                        cookies filled with dates, pistachios,
-                                        or walnuts. Made following traditional
-                                        family recipes, these delicate treats
-                                        offer a taste of heritage with every
-                                        bite.
+                                        Savor the rich taste of our Double
+                                        Chocolate Chip Cookie, made with cocoa
+                                        and loaded with chocolate chips. Soft,
+                                        chewy, and perfectly paired with Zaina
+                                        Coffee.
                                     </p>
                                 </div>
                             </div>
@@ -496,12 +494,10 @@ const Page = () => {
                                         Chocolate Chip
                                     </h2>
                                     <p className="leading-relaxed text-base text-white">
-                                        Limited-time seasonal flavors that
-                                        celebrate the best of each season. From
-                                        spiced gingerbread in winter to
-                                        refreshing lemon in summer, our rotating
-                                        collection ensures there&apos;s always
-                                        something new to discover.
+                                        Enjoy the classic taste of our Chocolate
+                                        Chip Cookie, packed with rich chocolate
+                                        chips and baked to a soft, chewy
+                                        perfection.
                                     </p>
                                 </div>
                             </div>
@@ -521,15 +517,14 @@ const Page = () => {
                                 {/* Bottom Text */}
                                 <div className="p-6  relative overflow-auto flex-1">
                                     <h2 className=" text-2xl font-bold mb-4 text-white">
-                                        Miso white chocolate Chip
+                                        Miso White Chocolate Chip
                                     </h2>
                                     <p className="leading-relaxed text-base text-white">
-                                        Limited-time seasonal flavors that
-                                        celebrate the best of each season. From
-                                        spiced gingerbread in winter to
-                                        refreshing lemon in summer, our rotating
-                                        collection ensures there&aops;s always
-                                        something new to discover.
+                                        Experience a unique twist on a classic
+                                        favorite. It blends creamy white
+                                        chocolate with a hint of savory miso,
+                                        creating a perfectly balanced, soft, and
+                                        chewy treat.
                                     </p>
                                 </div>
                             </div>
@@ -601,11 +596,7 @@ const Page = () => {
                                                         </h3>
                                                         {item.id !== 2 && (
                                                             <p className="text-gray-600 text-md">
-                                                                Premium quality{" "}
-                                                                {item.category}{" "}
-                                                                in{" "}
-                                                                {item.color.toLowerCase()}{" "}
-                                                                color.
+                                                                {item.dis}
                                                             </p>
                                                         )}
                                                     </div>
