@@ -144,7 +144,7 @@ const Page = () => {
                             {/* Right Text */}
                             <div className="p-8 flex flex-col justify-center md:w-2/3 text-center md:text-left relative overflow-auto">
                                 <h2 className="text-white text-4xl font-bold  mb-4">
-                                    Zaina Latter (Saffron & Almond)
+                                    Zaina Latte (Saffron & Almond)
                                 </h2>
                                 <p className="text-white/90 mb-6 leading-relaxed text-xl">
                                     A blend of saffron and almond for a smooth
