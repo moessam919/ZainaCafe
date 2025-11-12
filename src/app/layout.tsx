@@ -59,7 +59,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
     title: "Zaina Cafe",
     description:
-        "Zaina Cafe – Conveniently located within Saudi German Hospital Dubai. We offer a wide selection of coffee, beverages, and light meals to refresh and energize you during your visit. Come experience our warm hospitality and delicious offerings.",
+        "Zaina Cafe – We offer a wide selection of coffee, beverages, and light meals to refresh and energize you during your visit. Come experience our warm hospitality and delicious offerings.",
 };
 
 export default function RootLayout({
