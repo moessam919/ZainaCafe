@@ -10,7 +10,7 @@ import Image from "next/image";
 const DynamicMap = dynamic(() => import("./MapComponent"), {
     ssr: false,
     loading: () => (
-        <div className="flex-1 bg-gradient-to-b from-gray-50 to-gray-100 flex items-center justify-center h-full">
+        <div className="flex-1 bg-linear-to-b from-gray-50 to-gray-100 flex items-center justify-center h-full">
             <div className="text-center bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-sm">
                 <div className="relative w-12 h-12 mx-auto mb-3">
                     <div className="absolute inset-0 rounded-full border-t-2 border-r-2 border-amber-600 animate-spin"></div>

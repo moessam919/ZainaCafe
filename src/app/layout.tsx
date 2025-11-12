@@ -4,6 +4,52 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
+const ensureServerLocalStorage = () => {
+    if (typeof window !== "undefined") {
+        return;
+    }
+
+    const globalForServer = globalThis as typeof globalThis & {
+        localStorage?: Storage;
+    };
+
+    const storage = globalForServer.localStorage;
+
+    if (storage && typeof storage.getItem === "function") {
+        return;
+    }
+
+    const memory = new Map<string, string>();
+
+    const polyfill: Storage = {
+        get length() {
+            return memory.size;
+        },
+        clear() {
+            memory.clear();
+        },
+        getItem(key: string) {
+            const normalizedKey = String(key);
+            return memory.has(normalizedKey)
+                ? memory.get(normalizedKey)!
+                : null;
+        },
+        key(index: number) {
+            return Array.from(memory.keys())[index] ?? null;
+        },
+        removeItem(key: string) {
+            memory.delete(String(key));
+        },
+        setItem(key: string, value: string) {
+            memory.set(String(key), String(value));
+        },
+    };
+
+    globalForServer.localStorage = polyfill;
+};
+
+ensureServerLocalStorage();
+
 const poppins = Poppins({
     variable: "--font-poppins",
     subsets: ["latin"],

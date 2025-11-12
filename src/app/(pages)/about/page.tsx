@@ -13,7 +13,7 @@ const values = [
         icon: <Heart size={36} strokeWidth={1.5} />,
         title: "Authenticity",
         description:
-            "From the ingredients we choose to the spaces we design, we stay true to who we are. Our Saudi roots and personal story are reflected in every detail.",
+            "From the ingredients we choose to the spaces we design, we stay true to our identity. Our Saudi roots and personal journey shape every detail.",
     },
     {
         icon: <Palette size={36} strokeWidth={1.5} />,
