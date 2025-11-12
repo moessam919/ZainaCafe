@@ -333,7 +333,7 @@ const Page = () => {
                                                         key={coffee.id}
                                                         className="bg-gray-200 rounded-2xl p-6"
                                                     >
-                                                        <div className="h-96 bg-gradient-to-br rounded-2xl mb-4 flex items-center justify-center relative overflow-hidden">
+                                                        <div className="h-96 bg-linear-to-br rounded-2xl mb-4 flex items-center justify-center relative overflow-hidden">
                                                             <Image
                                                                 width={1920}
                                                                 height={1080}
@@ -577,7 +577,7 @@ const Page = () => {
                                                         key={item.id}
                                                         className="bg-gray-200 rounded-2xl p-6"
                                                     >
-                                                        <div className="h-96 bg-gradient-to-br rounded-2xl mb-4 flex items-center justify-center relative overflow-hidden">
+                                                        <div className="h-96 bg-linear-to-br rounded-2xl mb-4 flex items-center justify-center relative overflow-hidden">
                                                             <Image
                                                                 width={1920}
                                                                 height={1080}
@@ -645,7 +645,7 @@ const Page = () => {
             </section>
 
             {/* Menu with Pricing Details Section */}
-            <section className="py-10 bg-gradient-to-br from-gray-50 to-gray-100">
+            <section className="py-10 bg-linear-to-br from-gray-50 to-gray-100">
                 <div className="container mx-auto max-w-9xl px-6">
                     <div className="mb-12 text-center">
                         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">

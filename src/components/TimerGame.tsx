@@ -2,6 +2,95 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Play, Pause, RotateCcw, Trophy } from "lucide-react";
 
+const CelebrationStyles = () => (
+    <style jsx global>{`
+        @keyframes slideInDown {
+            0% {
+                transform: translateY(-24px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulseGlow {
+            0%,
+            100% {
+                box-shadow: 0 12px 35px rgba(251, 191, 36, 0.3);
+            }
+            50% {
+                box-shadow: 0 18px 45px rgba(249, 115, 22, 0.36);
+            }
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-120%) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(120vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(30px) scale(0.9);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-30px) scale(1.05);
+                opacity: 0.4;
+            }
+        }
+
+        .reward-banner {
+            animation: slideInDown 0.75s ease-out forwards,
+                pulseGlow 3.2s ease-in-out infinite;
+        }
+
+        .celebration-item {
+            position: absolute;
+            top: -12%;
+            font-size: 1.8rem;
+            animation: confettiFall 6.5s linear infinite;
+            pointer-events: none;
+        }
+
+        .celebration-item.cookie {
+            animation-duration: 7.5s;
+        }
+
+        .celebration-floating {
+            animation: floatUp 4.5s ease-in-out infinite;
+        }
+    `}</style>
+);
+
+const celebrationItems = [
+    { emoji: "🎉", left: "6%", delay: "0s" },
+    { emoji: "🎊", left: "16%", delay: "0.4s" },
+    { emoji: "🎈", left: "26%", delay: "0.8s" },
+    { emoji: "🍪", left: "36%", delay: "1.2s", cookie: true },
+    { emoji: "🎉", left: "46%", delay: "0.6s" },
+    { emoji: "🎊", left: "56%", delay: "1s" },
+    { emoji: "🎈", left: "66%", delay: "0.2s" },
+    { emoji: "🍪", left: "76%", delay: "1.4s", cookie: true },
+    { emoji: "🎉", left: "86%", delay: "1.8s" },
+    { emoji: "🎊", left: "12%", delay: "2.2s" },
+    { emoji: "🎈", left: "52%", delay: "2.4s" },
+    { emoji: "🍪", left: "32%", delay: "2.6s", cookie: true },
+];
+
 export default function TimerGame() {
     type Difficulty = "easy" | "medium" | "hard";
     interface GameResult {
@@ -17,10 +106,12 @@ export default function TimerGame() {
     const [result, setResult] = useState<GameResult | null>(null);
     const [bestScore, setBestScore] = useState<number | null>(null);
     const [gamesPlayed, setGamesPlayed] = useState<number>(0);
+    const [showBanner, setShowBanner] = useState<boolean>(true);
 
     const intervalRef = useRef<number | null>(null);
     const speedRef = useRef<number>(100);
     const directionRef = useRef<number>(1);
+    const applauseRef = useRef<HTMLAudioElement | null>(null);
 
     const finishGame = useCallback(
         (finalTime: number) => {
@@ -190,13 +281,34 @@ export default function TimerGame() {
         }
     }, [isRunning, difficulty, finishGame]);
 
+    useEffect(() => {
+        if (result?.isWin && applauseRef.current) {
+            applauseRef.current.currentTime = 0;
+            const playPromise = applauseRef.current.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(() => {
+                    // ignore autoplay errors
+                });
+            }
+        }
+    }, [result]);
+
+    const stopCelebrationAudio = () => {
+        if (applauseRef.current) {
+            applauseRef.current.pause();
+            applauseRef.current.currentTime = 0;
+        }
+    };
+
     const startGame = (level: Difficulty) => {
+        stopCelebrationAudio();
         setDifficulty(level);
         setTime(0);
         setIsRunning(true);
         setResult(null);
         speedRef.current = 100;
         directionRef.current = 1;
+        setShowBanner(false);
     };
 
     const stopTimer = () => {
@@ -230,8 +342,10 @@ export default function TimerGame() {
         setTime(0);
         setIsRunning(false);
         setResult(null);
+        stopCelebrationAudio();
         if (intervalRef.current !== null)
             window.clearTimeout(intervalRef.current);
+        setShowBanner(true);
     };
 
     const getDifficultyText = (level: Difficulty) => {
@@ -243,6 +357,8 @@ export default function TimerGame() {
     if (!difficulty) {
         return (
             <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
+                <CelebrationStyles />
+
                 <div className="pointer-events-none absolute inset-0 opacity-60">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(34,197,94,0.35),transparent_55%)]" />
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_15%,rgba(59,130,246,0.28),transparent_60%)]" />
@@ -251,10 +367,29 @@ export default function TimerGame() {
 
                 <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center justify-center gap-12 px-6 py-16 text-center">
                     <div className="space-y-4">
-                        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold tracking-wider text-white/70">
+                        {showBanner && (
+                            <div className=" flex w-full max-w-3xl justify-center px-6">
+                                <div
+                                    className="reward-banner flex flex-col w-full items-center justify-center rounded-2xl px-3 md:px-5 py-3 text-center text-base font-bold text-white shadow-[0_18px_45px_rgba(251,191,36,0.35)] md:text-lg"
+                                    style={{
+                                        background:
+                                            "linear-gradient(135deg,#fbbf24,#f97316)",
+                                        fontFamily:
+                                            "'Fredoka', 'Poppins', 'Inter', sans-serif",
+                                    }}
+                                >
+                                    🎁 Stop the timer exactly at 10.00 and
+                                    <div className="text-xl font-semibold md:text-5xl">
+                                        win a free cup of coffee ☕!
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                        <span className="inline-flex items-center gap-2 rounded-md border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold tracking-wider text-white/70">
                             <span className="h-2 w-2 rounded-full bg-emerald-400" />
                             Fresh challenge each run
                         </span>
+
                         <h1 className="text-4xl font-bold leading-tight text-white sm:text-5xl">
                             🎯 Timing Arena
                         </h1>
@@ -353,6 +488,7 @@ export default function TimerGame() {
 
     return (
         <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
+            <CelebrationStyles />
             <div className="pointer-events-none absolute inset-0 opacity-70">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_25%,rgba(56,189,248,0.25),transparent_50%)]" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_20%,rgba(249,115,22,0.28),transparent_55%)]" />
@@ -364,10 +500,33 @@ export default function TimerGame() {
             />
 
             <div className="relative z-10 w-full max-w-4xl px-6 py-16">
+                {result?.isWin && (
+                    <div className="pointer-events-none absolute inset-0 z-30 overflow-hidden">
+                        {celebrationItems.map((item, index) => (
+                            <span
+                                key={`${item.emoji}-${index}`}
+                                className={`celebration-item ${
+                                    item.cookie ? "cookie" : ""
+                                }`}
+                                style={{
+                                    left: item.left,
+                                    animationDelay: item.delay,
+                                }}
+                            >
+                                {item.emoji}
+                            </span>
+                        ))}
+                    </div>
+                )}
                 <div
                     className="relative flex flex-col items-center overflow-hidden rounded-[38px] border border-white/10 bg-white/5 p-10 text-center shadow-[0_50px_120px_rgba(15,23,42,0.45)] backdrop-blur-2xl"
                     style={{ background: surfaceGradient }}
                 >
+                    <audio
+                        ref={applauseRef}
+                        src="/sounds/applause.mp3"
+                        preload="auto"
+                    />
                     <div className="flex flex-col items-center gap-6">
                         <div
                             className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.35em] text-white/70"
@@ -458,6 +617,12 @@ export default function TimerGame() {
                                     className="relative flex flex-col items-center gap-4 overflow-hidden rounded-[28px] border border-white/10 bg-white/5 p-6 text-center shadow-[0_25px_60px_rgba(15,23,42,0.45)] backdrop-blur-2xl"
                                     style={{ background: badgeGradient }}
                                 >
+                                    {result.isWin && (
+                                        <div className="celebration-floating flex justify-center text-lg font-semibold text-white">
+                                            🎉 Perfect! You just won a free
+                                            coffee cup ☕
+                                        </div>
+                                    )}
                                     <div className="text-5xl">
                                         {result.isWin ? "🎉" : "😅"}
                                     </div>
