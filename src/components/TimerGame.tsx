@@ -91,6 +91,116 @@ const celebrationItems = [
     { emoji: "🍪", left: "32%", delay: "2.6s", cookie: true },
 ];
 
+const bigCelebrationItems = [
+    ...celebrationItems,
+
+    // EXTRA CONFETTI
+    { emoji: "🎉", left: "6%", delay: "0s" },
+    { emoji: "🎊", left: "16%", delay: "0.4s" },
+    { emoji: "🎈", left: "26%", delay: "0.8s" },
+    { emoji: "🍪", left: "36%", delay: "1.2s", cookie: true },
+    { emoji: "🎉", left: "46%", delay: "0.6s" },
+    { emoji: "🎊", left: "56%", delay: "1s" },
+    { emoji: "🎈", left: "66%", delay: "0.2s" },
+    { emoji: "🍪", left: "76%", delay: "1.4s", cookie: true },
+    { emoji: "🎉", left: "86%", delay: "1.8s" },
+    { emoji: "🎊", left: "12%", delay: "2.2s" },
+    { emoji: "🎈", left: "52%", delay: "2.4s" },
+    { emoji: "🍪", left: "32%", delay: "2.6s", cookie: true },
+    { emoji: "🎉", left: "5%", delay: "0.1s" },
+    { emoji: "🎊", left: "15%", delay: "0.3s" },
+    { emoji: "🎈", left: "25%", delay: "0.7s" },
+    { emoji: "💥", left: "35%", delay: "1s" },
+    { emoji: "✨", left: "45%", delay: "1.3s" },
+    { emoji: "🎆", left: "55%", delay: "1.6s" },
+    { emoji: "🎇", left: "65%", delay: "1.9s" },
+    { emoji: "💫", left: "75%", delay: "2.1s" },
+    { emoji: "🌟", left: "85%", delay: "2.4s" },
+];
+
+const Fireworks = () => {
+    const fireworkCount = 15;
+    const fireworks = Array.from({ length: fireworkCount });
+
+    return (
+        <>
+            <style jsx global>{`
+                @keyframes fw-burst-slow {
+                    0% {
+                        transform: scale(0);
+                        opacity: 1;
+                    }
+                    40% {
+                        transform: scale(1);
+                        opacity: 1;
+                    }
+                    100% {
+                        transform: scale(1.4);
+                        opacity: 0;
+                    }
+                }
+
+                .fw-explosion-slow {
+                    position: absolute;
+                    border-radius: 50%;
+                    width: 14px;
+                    height: 14px;
+                    pointer-events: none;
+                    background: radial-gradient(circle, #fff, transparent);
+                    animation: fw-burst-slow 3s ease-out forwards; /* أبطأ */
+                }
+            `}</style>
+
+            {fireworks.map((_, i) => {
+                const randomTop = Math.random() * 80 + "%";
+                const randomLeft = Math.random() * 80 + "%";
+
+                const randomSize = Math.random() * 20 + 16 + "px";
+                const randomDelay = Math.random() * 1.4 + "s";
+                const randomColor = [
+                    "#ff4757",
+                    "#ffa502",
+                    "#2ed573",
+                    "#1e90ff",
+                    "#e056fd",
+                    "#ff6b81",
+                ][Math.floor(Math.random() * 6)];
+
+                return (
+                    <div
+                        key={i}
+                        className="fw-explosion-slow"
+                        style={{
+                            top: randomTop,
+                            left: randomLeft,
+                            width: randomSize,
+                            height: randomSize,
+                            animationDelay: randomDelay,
+                            background: `radial-gradient(circle, ${randomColor}, transparent)`,
+                        }}
+                    />
+                );
+            })}
+
+            <div
+                className="pointer-events-none fixed inset-0 bg-white/10"
+                style={{ animation: "fw-softflash 1.2s ease-out forwards" }}
+            />
+
+            <style jsx global>{`
+                @keyframes fw-softflash {
+                    0% {
+                        opacity: 0.5;
+                    }
+                    100% {
+                        opacity: 0;
+                    }
+                }
+            `}</style>
+        </>
+    );
+};
+
 export default function TimerGame() {
     type Difficulty = "easy" | "medium" | "hard";
     interface GameResult {
@@ -502,7 +612,8 @@ export default function TimerGame() {
             <div className="relative z-10 w-full max-w-4xl px-6 py-16">
                 {result?.isWin && (
                     <div className="pointer-events-none absolute inset-0 z-30 overflow-hidden">
-                        {celebrationItems.map((item, index) => (
+                        {/* More Confetti */}
+                        {bigCelebrationItems.map((item, index) => (
                             <span
                                 key={`${item.emoji}-${index}`}
                                 className={`celebration-item ${
@@ -516,8 +627,12 @@ export default function TimerGame() {
                                 {item.emoji}
                             </span>
                         ))}
+
+                        {/* Fireworks */}
+                        <Fireworks />
                     </div>
                 )}
+
                 <div
                     className="relative flex flex-col items-center overflow-hidden rounded-[38px] border border-white/10 bg-white/5 p-10 text-center shadow-[0_50px_120px_rgba(15,23,42,0.45)] backdrop-blur-2xl"
                     style={{ background: surfaceGradient }}
